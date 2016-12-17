@@ -1,0 +1,53 @@
+{
+  "type": "network",
+  "version": "1.0",
+  "data": "data.json",
+  "logo": {
+    "file": "",
+    "link": "",
+    "text": "Madison Butler"
+  },
+  "text": {
+    "more": "Immediately following the Boston Marathon Bombing, conspiracy theories emerged about the motives of the bombers, the Tsarnaev brothers. The focus of my project was researching the development of the CIA-implicated theory, specifically, and analyzing its network analysis, while maintaining the argument that coincidence does not necessarily mean conspiracy. This conspiracy I focused on in my project implicated the CIA in the recruitment of the Tsarnaev brothers and Chechen rebels for personal goals, possibly including instigation of unrest in Russia. Whether the brothers turned on the CIA and bombed the U.S. instead or the CIA directed the bombing itself is debated among conspiracy theorists, but both encompass the alleged association of CIA with Chechen rebels. Though the official account states that the brothers acted in their own interests without any ties to Chechen terrorist groups, the network formed from the CIA conspiracy encourages conspiracy theorists to use these “connections” as evidence to support their UCT. Through the concepts of Eigenvector centrality, triadic, closure, and clique formation, this network shows the structure of the conspiracy of the connections between the Tsarnaev brothers, the CIA, and CIA-front organizations.",
+    "intro": "CIA Conspiracy of the Boston Marathon Bombing",
+    "title": "Boston Marathon Bombing"
+  },
+  "legend": {
+    "edgeLabel": "",
+    "colorLabel": "Communities",
+    "nodeLabel": ""
+  },
+  "features": {
+    "search": true,
+    "groupSelectorAttribute": "color",
+    "hoverBehavior": "default"
+  },
+  "informationPanel": {
+    "groupByEdgeDirection": false,
+    "imageAttribute": false
+  },
+  "sigma": {
+    "drawingProperties": {
+      "defaultEdgeType": "curve",
+      "defaultHoverLabelBGColor": "#002147",
+      "defaultLabelBGColor": "#ddd",
+      "activeFontStyle": "bold",
+      "defaultLabelColor": "#000",
+      "labelThreshold": 10,
+      "defaultLabelHoverColor": "#fff",
+      "fontStyle": "bold",
+      "hoverFontStyle": "bold",
+      "defaultLabelSize": 14
+    },
+    "graphProperties": {
+      "maxEdgeSize": 0.5,
+      "minEdgeSize": 0.2,
+      "minNodeSize": 1,
+      "maxNodeSize": 7
+    },
+    "mouseProperties": {
+      "maxRatio": 20,
+      "minRatio": 0.75
+    }
+  }
+}
