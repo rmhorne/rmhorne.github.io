@@ -1,0 +1,53 @@
+{
+  "type": "network",
+  "version": "1.0",
+  "data": "data.json",
+  "logo": {
+    "file": "http://ajournalofmusicalthings.com/wp-content/uploads/Illuminati-Logo.png",
+    "link": "http://ajournalofmusicalthings.com/wp-content/uploads/Illuminati-Logo.png",
+    "text": "Kathryn Kelly"
+  },
+  "text": {
+    "more": "The nodes of this graph are organized according to Eigenvector centrality in color. The weight of the connections, representative of the strength of the bonds between nodes,\nare represented, can be shown by the thickness of the edges. This network is both beneficial and counterproductive to the complete understanding of this theory, as the multituude\nof nodes present, their varying connections, and implications regarding their involvement with other \"nodes\" create a rather complicated web. Nonetheless, my project took these \npuzzle pieces and attempted to fit them together, one by one, into a coherent, factual social network analysis. ",
+    "intro": "This network is a depiction of relationships among Illuminati affiliates and French citizens pertaining to causes of the F\nFrench Revolution. ",
+    "title": "The French Revolution and the Illuminati"
+  },
+  "legend": {
+    "edgeLabel": "",
+    "colorLabel": "Communities",
+    "nodeLabel": ""
+  },
+  "features": {
+    "search": true,
+    "groupSelectorAttribute": "color",
+    "hoverBehavior": "default"
+  },
+  "informationPanel": {
+    "groupByEdgeDirection": false,
+    "imageAttribute": false
+  },
+  "sigma": {
+    "drawingProperties": {
+      "defaultEdgeType": "curve",
+      "defaultHoverLabelBGColor": "#002147",
+      "defaultLabelBGColor": "#ddd",
+      "activeFontStyle": "bold",
+      "defaultLabelColor": "#000",
+      "labelThreshold": 10,
+      "defaultLabelHoverColor": "#fff",
+      "fontStyle": "bold",
+      "hoverFontStyle": "bold",
+      "defaultLabelSize": 14
+    },
+    "graphProperties": {
+      "maxEdgeSize": 0.5,
+      "minEdgeSize": 0.2,
+      "minNodeSize": 1,
+      "maxNodeSize": 7
+    },
+    "mouseProperties": {
+      "maxRatio": 20,
+      "minRatio": 0.75
+    }
+  }
+}
