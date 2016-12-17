@@ -1,0 +1,53 @@
+{
+  "type": "network",
+  "version": "1.0",
+  "data": "data.json",
+  "logo": {
+    "file": "",
+    "link": "",
+    "text": "Addy Liu"
+  },
+  "text": {
+    "more": "The War on Drugs officially began in 1971, when President Richard Nixon wrote a special message to Congress declaring the problem of drug abuse to have reached the level of a national emergency. Calling for a coordinated federal response, he cited statistics on drug-related deaths and linked the fight against drugs to that of a moral imperative (Peters). Since then, a number of conspiracy theories have cropped up with alternative views on the true reasoning behind initiating the War on Drugs: one being that the War on Drugs does not exist and is actually a government scam to offset the national debt. This network visualizes the actors associated with this conspiracy theory and their relationships and affiliations. ",
+    "intro": "\u003cem\u003eSocial affiliation network of people and groups named as evidence by David J. Stewart in his conspiracy theory.\u003c/em\u003e",
+    "title": "The War on Drugs as a Scam"
+  },
+  "legend": {
+    "edgeLabel": "",
+    "colorLabel": "Communities",
+    "nodeLabel": ""
+  },
+  "features": {
+    "search": true,
+    "groupSelectorAttribute": "color",
+    "hoverBehavior": "dim"
+  },
+  "informationPanel": {
+    "groupByEdgeDirection": false,
+    "imageAttribute": false
+  },
+  "sigma": {
+    "drawingProperties": {
+      "defaultEdgeType": "curve",
+      "defaultHoverLabelBGColor": "#002147",
+      "defaultLabelBGColor": "#ddd",
+      "activeFontStyle": "bold",
+      "defaultLabelColor": "#000",
+      "labelThreshold": 10,
+      "defaultLabelHoverColor": "#fff",
+      "fontStyle": "bold",
+      "hoverFontStyle": "bold",
+      "defaultLabelSize": 14
+    },
+    "graphProperties": {
+      "maxEdgeSize": 0.5,
+      "minEdgeSize": 0.2,
+      "minNodeSize": 1,
+      "maxNodeSize": 7
+    },
+    "mouseProperties": {
+      "maxRatio": 20,
+      "minRatio": 0.75
+    }
+  }
+}
