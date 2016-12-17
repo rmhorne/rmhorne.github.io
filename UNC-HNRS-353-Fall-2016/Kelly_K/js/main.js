@@ -130,7 +130,7 @@ function setupGUI(config) {
 	} else if (config.logo.text) {
 		logo="<h1>"+config.logo.text+"</h1>";
 	}
-	if (config.logo.link) logo="<a href=\"" + config.logo.link + "\">"+logo+"</a>";
+	if (config.logo.link) logo="<a href=\"" + config.logo.link + "\" height="42" width="42">"+logo+"</a>";
 	$("#maintitle").html(logo);
 
 	// #title
