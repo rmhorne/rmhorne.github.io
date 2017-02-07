@@ -525,7 +525,7 @@ $('#timelineHolder').attr('style','top: -251px');
                     $("#loadBox").show();
 
                     $.ajax({
-                        url: "pplaces.csv",
+                        url: "https://raw.githubusercontent.com/rmhorne/rmhorne.github.io/master/bamJS/modules/alacarte/pplaces.csv",
                         success: function(data) {
                             var csvdata = Papa.parse(data, {
                                 header: true,
