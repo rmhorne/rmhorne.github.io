@@ -1,6 +1,0 @@
-For class:
-
-Heat Map
-Data interchange - movign data between csv and shape files
-
-wget -r -np -l 1 -A zip https://www.epa.gov/climatechange
