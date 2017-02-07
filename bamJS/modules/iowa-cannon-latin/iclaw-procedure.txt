@@ -1,0 +1,167 @@
+CREATE TABLE tbib_dump (
+
+abbreviation    varchar,
+author_latin    varchar,
+author_english    varchar,
+modern_geographic_identity    varchar,
+ancient_geographic_identity    varchar,
+pleiades_id    varchar,
+century    varchar,
+date_of_birth    varchar,
+date_of_death    varchar,
+floruit    varchar,
+late_antique    varchar,
+christian    varchar,
+work    varchar,
+work_abbr    varchar,
+genre    varchar,
+poetry    varchar,
+meter    varchar,
+translation    varchar,
+translator    varchar,
+pseudepigraphic    varchar,
+disputed    varchar,
+other_possible_authors    varchar,
+manuscript_tradition    varchar,
+completely_lost    varchar,
+fragmentary    varchar,
+open_access_text_available    varchar,
+other_reference_numbers    varchar,
+perseus_author_urn    varchar,
+perseus_work_urn    varchar,
+cerl_urn    varchar,
+notes    varchar,
+ex_references varchar
+);
+
+
+psql -c "COPY tbib_dump FROM '/Users/ryan/Dropbox/current-projects/BAM/iclaw/ICLAW.csv' delimiter ',' csv;"
+
+CREATE SEQUENCE bam_dump_id START 101;
+ 
+
+CREATE SEQUENCE bam_id START 101;
+
+//if NEEDED
+ALTER SEQUENCE bam_id RESTART WITH 101;
+
+
+
+ALTER TABLE tbib_dump ADD COLUMN dump_id INTEGER;
+UPDATE tbib_dump SET dump_id = nextval('bam_dump_id');
+ALTER TABLE tbib_dump ALTER COLUMN dump_id SET DEFAULT nextval('bam_dump_id');
+ALTER TABLE tbib_dump ALTER COLUMN dump_id SET NOT NULL;
+ALTER TABLE tbib_dump ADD PRIMARY KEY (dump_id);
+
+
+
+
+CREATE TABLE iclaw_authors(
+bam_id INTEGER,
+abbreviation    varchar,
+author_latin    varchar,
+author_certain    boolean,
+dump_id    bigint,
+author_english    varchar,
+modern_geographic_identity    varchar,
+ancient_geographic_identity    varchar,
+pleiades_id    varchar,
+century    varchar,
+century_start    date,
+century_end    date,
+century_certain    boolean,
+century_marker    varchar,
+date_of_birth    varchar,
+date_of_birth_start    date,
+date_of_birth_end    date,
+date_of_birth_certain    boolean,
+date_of_birth_marker    varchar,
+date_of_death    varchar,
+date_of_death_start    date,
+date_of_death_end    date,
+date_of_death_certain    boolean,
+date_of_death_marker    varchar,
+floruit    varchar,
+floruit_final    date,
+floruit_end    date,
+floruit_certain    boolean,
+floruit_marker    varchar,
+late_antique    varchar,
+christian    varchar
+);
+
+
+ALTER TABLE iclaw_authors ADD COLUMN bam_id INTEGER;
+UPDATE iclaw_authors SET bam_id = nextval('bam_id');
+ALTER TABLE iclaw_authors ALTER COLUMN bam_id SET DEFAULT nextval('bam_id');
+ALTER TABLE iclaw_authors ALTER COLUMN bam_id SET NOT NULL;
+ALTER TABLE iclaw_authors ADD PRIMARY KEY (bam_id);
+
+
+////now to make the tables to identify unique individuals and works
+
+
+INSERT into iclaw_authors (abbreviation,
+author_latin,
+dump_id,
+author_english,
+modern_geographic_identity,
+ancient_geographic_identity,
+pleiades_id,
+century,
+date_of_birth,
+date_of_death,
+floruit,
+late_antique,
+christian)
+(
+select
+abbreviation,
+author_latin,
+min (dump_id) as dump_id,
+min (author_english) as author_english, 
+min (modern_geographic_identity) as modern_geographic_identity,
+min (ancient_geographic_identity) as ancient_geographic_identity,
+min (pleiades_id) as pleiades_id,
+min (century) as century,
+min (date_of_birth) as date_of_birth,
+min (date_of_death) as date_of_death,
+min (floruit) as floruit,
+min (late_antique) as late_antique,
+min (christian) as christian
+from tbib_dump
+GROUP BY abbreviation,
+author_latin
+ORDER BY author_latin
+);
+
+UPDATE iclaw_authors SET century_certain = TRUE;
+
+UPDATE iclaw_authors SET century_certain = FALSE where century LIKE '%?%';
+UPDATE iclaw_authors SET century_certain = FALSE where century LIKE '%c. %';
+
+
+
+ICLAW SQL
+The purpose here is to join any singular ICLAW entry with a pleiades ID. THis will not capture multiple entries, which should be solved when the database is changed to a relational table.
+
+SELECT
+iclaw_authors.bam_id,
+iclaw_authors.abbreviation,
+iclaw_authors.author_latin,
+iclaw_authors.author_english,
+iclaw_authors.modern_geographic_identity,
+iclaw_authors.ancient_geographic_identity,
+iclaw_authors.pleiades_id,
+iclaw_authors.century,
+iclaw_authors.date_of_birth,
+iclaw_authors.date_of_death,
+iclaw_authors.floruit,
+iclaw_authors.late_antique,
+iclaw_authors.christian,
+pplaces.reprlat,
+pplaces.reprlong,
+pplaces.title,
+pplaces.id AS pid
+FROM
+iclaw_authors LEFT JOIN pplaces ON iclaw_authors.pleiades_id = pplaces.id

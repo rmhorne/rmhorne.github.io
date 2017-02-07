@@ -1,0 +1,19 @@
+type 2 - island 
+3 - region
+4 - province
+5 - diosces
+
+
+
+types for hierokles
+
+
+
+request speak to speacialist
+
+stop the fees until transfer is complete
+
+
+call back - explain fees
+
+shelly - 
