@@ -1,6 +1,0 @@
-psql -c "COPY hiero_dump FROM '/Users/ryan/Sites/bam/modules/hiero/cities.csv' delimiter ',' csv HEADER;"
-
-csv HEADER;"
-
-
-hiero_app_dump
