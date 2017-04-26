@@ -32,6 +32,8 @@ $(document).keyup(function(e) {
                 for (i = 0; i < acc.length; i++) {
                     acc[i].onclick = function() {
                         this.classList.toggle("active");
+                        if( this.nextElementSibling){
                         this.nextElementSibling.classList.toggle("show");
+                        }
                     }
                 }

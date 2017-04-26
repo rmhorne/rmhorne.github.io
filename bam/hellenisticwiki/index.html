@@ -114,7 +114,7 @@
             color: #fff;
             padding: 5px;
             box-sizing: border-box;
-            z-index: 1000;
+            z-index: 200;
         }
 
         #left-btn-slide-toggle {
@@ -139,7 +139,7 @@
         #right-side-panel {
             position: absolute;
             top: 0;
-            right: -300px;
+            right: -25%;
             width: 25%;
             min-width: 300px;
             height: 100%;
@@ -231,10 +231,10 @@
         }
 
         .appLicense {
-            display: inline-block;
-            position: absolute;
+    position: fixed;
             left: 0px;
             bottom: 0px;
+            z-index: 10;
         }
         /* accordion layout following w3c demo */
 
@@ -251,6 +251,7 @@
             font-family: 'Open Sans', sans-serif;
             font-size: 14px;
             font-weight: bold;
+            z-index: 200;
         }
         /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 
@@ -270,6 +271,7 @@
             padding: 0 18px;
             background-color: white;
             display: none;
+            z-index: 200;
         }
         /* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
 
@@ -353,7 +355,6 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
             margin: auto;
-            overflow: scroll;
             padding: 20px;
             display: none;
             z-index: 10;
@@ -449,7 +450,10 @@
     <div id="d3MainChart">
     	<!-- the main navigation panel to the left - will probably have to rename this to navigation panel, etc--!>
 		<div id="left-side-panel">
-		<div id="left-btn-slide-toggle" class="slider-icon">&#9664;</div>
+				<div id="left-btn-slide-toggle" class="slider-icon">&#9664;</div>
+
+		<div id="right-side-inner" class="allow-scroll">
+		
 			<span id="navbar-image" class="navbar-image">
     		</span>
     		<div class="navbar-brand" id="navbar-brand">
@@ -463,20 +467,23 @@
 				<button id="searchButton" class="accordion accordionExp"><img src="../images/open-iconic/magnifying-glass.svg" class="accordianImage" alt="magnifying-glass">&nbsp;&nbsp;&nbsp;&nbsp;Search By Person Name</button>
 				<div class="panel">
              <!-- this holds the autocomplete search--!>
-			<div id="searchHolder" class="display darkText"><table id="nameSearch" class="display darkText" width="100%"></table></div>
+			<div id="searchHolder" class="display darkText"><table id="nameSearch" class="display darkText cell-border" width="100%"></table></div>
 				
             </div>
 			
-			<!-- License information--!>
-    		<span id="appLicense" class="appLicense">
-    		</span>
+			
+		<!-- License information--!>
+    		<div id="appLicense" class="appLicense">
+    		</div>
+		</div>
+		
 		</div>
 		
 		<!-- the right panel is generally reactive to user selections - will probably have to rename this to react panel or something like it--!>
 		<div id="right-side-panel">
-		<div id="right-side-inner" class="allow-scroll">
-		<div id="right-btn-slide-toggle" class="slider-icon">&#9664;
+				<div id="right-btn-slide-toggle" class="slider-icon">&#9664;
 			</div>
+		<div id="right-side-inner" class="allow-scroll">
 			<div id="right-side-headline" class="right-title">
 			</div>
 				<button id="selectionAttributesListButton" class="accordion accordionExp"><img src="../images/open-iconic/list.svg" class="accordianImage" alt="magnifying-glass">&nbsp;&nbsp;&nbsp;&nbsp; More Information</button>
@@ -489,7 +496,7 @@
 					<div class="panel">
              <!-- this holds the autocomplete search--!>
 			<div id="clickResultsHolder" class="display darkText">
-						<table id="right-side-text-connected-list" class="display darkText" width="100%">
+						<table id="right-side-text-connected-list" class="display darkText cell-border" width="100%">
 			  <thead>
         		<tr>
             		<th>sourceTitle</th>

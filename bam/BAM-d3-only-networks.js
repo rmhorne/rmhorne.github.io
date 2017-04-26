@@ -6,6 +6,7 @@ var nodeList = [];
 
 //create a blank connections table that we will add to and modify later
 var connectionsSearchTable = $('#right-side-text-connected-list').DataTable({
+  "autoWidth": false,
     "bLengthChange": false,
     "pageLength": 5,
     "columns": [{
@@ -19,7 +20,7 @@ var connectionsSearchTable = $('#right-side-text-connected-list').DataTable({
         },
         {
             "data": "connectionType",
-            "title": "Relationship",
+            "title": "Connection",
             "width": "33%"
         },
         {
@@ -33,6 +34,162 @@ var connectionsSearchTable = $('#right-side-text-connected-list').DataTable({
         }
     ]
 });
+
+
+//create a blank master connections table
+var connectionsFullTable = $('#connectionsFullList').DataTable({
+    "columns": [{
+            "data": "sourceTitle",
+            "title": "Source",
+            "width": "33%"
+        },
+        {
+            "data": "sourceIndex",
+            "title": "sourceIndex",
+            "visible": false
+        },
+        {
+            "data": "connectionType",
+            "title": "Connection",
+            "width": "33%"
+        },
+        {
+            "data": "targetTitle",
+            "title": "Target",
+            "width": "33%"
+        },
+        {
+            "data": "targetIndex",
+            "title": "targetIndex",
+            "visible": false
+        }
+    ],
+    dom: 'Bfrtip',
+    "bAutoWidth": false,
+    "sPaginationType": "full_numbers",
+    "pageLength": 5,
+    buttons: [
+        'colvis', 'copy', 'csv'
+    ]
+});
+
+
+//create a blank master nodes table
+var peopleListTable = $('#databaseFullList').DataTable({
+    "columns": [{
+            "data": "name",
+            "title": "Name",
+            "width": "33%"
+        },
+        {
+            "data": "gender",
+            "title": "Gender",
+            "width": "33%"
+        },
+        {
+            "data": "wiki_link",
+            "title": "Wikipedia Link",
+            "width": "33%"
+        },
+        {
+            "data": "image",
+            "title": "Image Link",
+            "width": "33%"
+        },
+        {
+            "data": "indegree",
+            "title": "indegree",
+            "width": "33%"
+        },
+        {
+            "data": "outdegree",
+            "title": "outdegree",
+            "width": "33%"
+        },
+        {
+            "data": "degree",
+            "title": "degree",
+            "width": "33%"
+        },
+        {
+            "data": "weightedInDegree",
+            "title": "weighted indegree",
+            "width": "33%"
+        },
+        {
+            "data": "weightedOutDegree",
+            "title": "weighted outdegree",
+            "width": "33%"
+        },
+        {
+            "data": "weightedDegree",
+            "title": "weighted degree",
+            "width": "33%"
+        },
+        {
+            "data": "eccentricity",
+            "title": "eccentricity",
+            "width": "33%"
+        },
+        {
+            "data": "closnessCentrality",
+            "title": "closnesscentrality",
+            "width": "33%"
+        },
+        {
+            "data": "harmonicClosnessCentrality",
+            "title": "harmonicclosnesscentrality",
+            "width": "33%"
+        },
+
+        {
+            "data": "betweenessCentrality",
+            "title": "betweenesscentrality",
+            "width": "33%"
+        },
+
+        {
+            "data": "modularityClass",
+            "title": "modularity_class",
+            "width": "33%"
+        },
+
+        {
+            "data": "componentID",
+            "title": "componentnumber",
+            "width": "33%"
+        },
+
+        {
+            "data": "strongcompnum",
+            "title": "strongcompnum",
+            "width": "33%"
+        },
+        {
+            "data": "clustering",
+            "title": "clustering",
+            "width": "33%"
+        },
+        {
+            "data": "eigencentrality",
+            "title": "eigencentrality",
+            "width": "33%"
+        },
+        {
+            "data": "index",
+            "title": "index",
+            "visible": false
+        }
+    ],
+    dom: 'Bfrtip',
+    "bAutoWidth": false,
+    "sPaginationType": "full_numbers",
+    "pageLength": 5,
+    buttons: [
+        'colvis', 'copy', 'csv'
+    ]
+});
+
 
 //centered node
 var centeredNode;
@@ -79,6 +236,8 @@ var simulation = d3.forceSimulation()
 
 d3.json(bamConfigJson.bamMainDataLocation, function(error, graph) {
     if (error) throw error;
+
+    var connectionsFullTableHolder = [];
 
     var link = svg.append("g")
         .attr("class", "links")
@@ -130,7 +289,7 @@ d3.json(bamConfigJson.bamMainDataLocation, function(error, graph) {
                 if (bamConfigJson.bamD3ToolTipAtributes.hasOwnProperty(key)) {
                     if (d.attributes[key]) {
                         //we may want to call the attribute by a different title, which is supplied in the config file
-                                                attributesHtml = attributesHtml + '<br />';
+                        attributesHtml = attributesHtml + '<br />';
                         attributesHtml = attributesHtml + bamConfigJson.bamD3ToolTipAtributes[key];
                         attributesHtml = attributesHtml + ' ' + d.attributes[key];
                     }
@@ -198,6 +357,109 @@ d3.json(bamConfigJson.bamMainDataLocation, function(error, graph) {
         .links(graph.edges);
 
     simulation.alphaDecay(.0107);
+
+
+
+
+    svg.selectAll("line").each(function(d2, i) {
+        var edgeDataHolder = {};
+        edgeDataHolder.sourceTitle = d2.source.label;
+        edgeDataHolder.sourceIndex = d2.source.index;
+        edgeDataHolder.connectionType = d2.attributes.relationship;
+        edgeDataHolder.targetTitle = d2.target.label;
+        edgeDataHolder.targetIndex = d2.target.index;
+        connectionsFullTableHolder.push(edgeDataHolder);
+    });
+
+
+    connectionsFullTable.rows.add(connectionsFullTableHolder);
+    connectionsFullTable.draw();
+
+    connectionsFullTableHolder = [];
+
+    svg.selectAll("circle").each(function(d, i) {
+        var edgeDataHolder = {};
+        edgeDataHolder.name = d.label;
+        edgeDataHolder.gender = d.attributes.gender;
+        edgeDataHolder.wiki_link = d.attributes.wiki_link;
+        edgeDataHolder.image = d.attributes.image;
+        edgeDataHolder.indegree = d.attributes['In-Degree'];
+        edgeDataHolder.outdegree = d.attributes['Out-Degree'];
+        edgeDataHolder.degree = d.attributes['Degree'];
+        edgeDataHolder.weightedInDegree = d.attributes['Weighted In-Degree'];
+        edgeDataHolder.weightedOutDegree = d.attributes['Weighted Out-Degree'];
+        edgeDataHolder.weightedDegree = d.attributes['Weighted Degree'];
+        edgeDataHolder.eccentricity = d.attributes['Eccentricity'];
+        edgeDataHolder.closnessCentrality = d.attributes['Closeness Centrality'];
+        edgeDataHolder.harmonicClosnessCentrality = d.attributes['Harmonic Closeness Centrality'];
+        edgeDataHolder.betweenessCentrality = d.attributes['Betweenness Centrality'];
+        edgeDataHolder.modularityClass = d.attributes['Modularity Class'];
+        edgeDataHolder.componentID = d.attributes['Component ID'];
+        edgeDataHolder.strongcompnum = d.attributes['Strongly-Connected ID'];
+        edgeDataHolder.clustering = d.attributes['Clustering Coefficient'];
+        edgeDataHolder.eigencentrality = d.attributes['Eigenvector Centrality'];
+        edgeDataHolder.index = d.index;
+        connectionsFullTableHolder.push(edgeDataHolder);
+    });
+
+    peopleListTable.rows.add(connectionsFullTableHolder);
+    peopleListTable.draw();
+    
+    
+    
+    $('#connectionsFullList tbody').on('click', 'tr', function() {
+                var data = connectionsFullTable.row(this).data();
+                buttonIndex = data.sourceIndex;
+                svg.selectAll("circle").each(function(d2, i) {
+
+                    if (buttonIndex == d2.index) {
+                        createInfoMasthead(d2, false);
+                        connectedNodes(d2);
+                        zoomToD3Selection(d2);
+                    }
+                    
+                   
+                });
+                
+                 if (rightsideSlideToggle == false) {
+                $("#right-side-panel").animate({
+                    right: "0",
+                }, 500, function() {
+                    // Animation complete.
+                    rightsideSlideToggle = true;
+                    $("#right-btn-slide-toggle").html('&#9654;');
+                });
+            }
+            });
+            
+	$('#databaseFullList tbody').on('click', 'tr', function() {
+                var data = peopleListTable.row(this).data();
+                    buttonIndex = data.index;
+
+                
+                svg.selectAll("circle").each(function(d2, i) {
+
+                    if (buttonIndex == d2.index) {
+                        createInfoMasthead(d2, false);
+                        connectedNodes(d2);
+                        zoomToD3Selection(d2);
+                    }
+                    
+                    
+                });
+            
+            if (rightsideSlideToggle == false) {
+                $("#right-side-panel").animate({
+                    right: "0",
+                }, 500, function() {
+                    // Animation complete.
+                    rightsideSlideToggle = true;
+                    $("#right-btn-slide-toggle").html('&#9654;');
+                });
+            }
+            
+            });            
+
 
     // the ticked function 
     function ticked() {
@@ -302,7 +564,6 @@ d3.json(bamConfigJson.bamMainDataLocation, function(error, graph) {
             link.style("opacity", function(o) {
                 //expanded from the example to add more functionality
                 if (d.index == o.source.index || d.index == o.target.index) {
-                    // console.log(o);
                     var tempLinkStructure = {};
                     tempLinkStructure.sourceTitle = o.source.label;
                     tempLinkStructure.sourceIndex = o.source.index;
@@ -329,7 +590,6 @@ d3.json(bamConfigJson.bamMainDataLocation, function(error, graph) {
 
             $('#right-side-text-connected-list tbody').on('click', 'tr', function() {
                 var data = connectionsSearchTable.row(this).data();
-                console.log(data);
                 if (data.sourceIndex != d.index) {
                     buttonIndex = data.sourceIndex;
                 } else {
@@ -352,9 +612,9 @@ d3.json(bamConfigJson.bamMainDataLocation, function(error, graph) {
         }
     }
 
-//
-//Functions
-//
+    //
+    //Functions
+    //
 
     function returnOpacity() {
         node.style("opacity", 1);

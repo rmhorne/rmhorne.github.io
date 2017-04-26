@@ -48,7 +48,7 @@ var overlayPanelsList = {};
                 $("#right-btn-slide-toggle").click(function() {
                 if (rightsideSlideToggle == true) {
                     $("#right-side-panel").animate({
-                        right: "-300",
+                        right: "-25%",
                     }, 500, function() {
                         // Animation complete.
                         rightsideSlideToggle = false;
