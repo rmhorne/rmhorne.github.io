@@ -5,9 +5,34 @@
 var nodeList = [];
 
 //create a blank connections table that we will add to and modify later
-    var connectionsSearchTable = $('#right-side-text-connected-list').DataTable({ "bLengthChange": false,
-        "pageLength": 5});
-
+var connectionsSearchTable = $('#right-side-text-connected-list').DataTable({
+    "bLengthChange": false,
+    "pageLength": 5,
+    "columns": [{
+            "data": "sourceTitle",
+            "title": "Source",
+            "width": "33%"
+        },
+        {
+            "data": "sourceIndex",
+            "visible": false
+        },
+        {
+            "data": "connectionType",
+            "title": "Relationship",
+            "width": "33%"
+        },
+        {
+            "data": "targetTitle",
+            "title": "Target",
+            "width": "33%"
+        },
+        {
+            "data": "targetIndex",
+            "visible": false
+        }
+    ]
+});
 
 //centered node
 var centeredNode;
@@ -105,10 +130,9 @@ d3.json(bamConfigJson.bamMainDataLocation, function(error, graph) {
                 if (bamConfigJson.bamD3ToolTipAtributes.hasOwnProperty(key)) {
                     if (d.attributes[key]) {
                         //we may want to call the attribute by a different title, which is supplied in the config file
+                                                attributesHtml = attributesHtml + '<br />';
                         attributesHtml = attributesHtml + bamConfigJson.bamD3ToolTipAtributes[key];
                         attributesHtml = attributesHtml + ' ' + d.attributes[key];
-                        attributesHtml = attributesHtml + '<br />';
-
                     }
                 }
             }
@@ -206,7 +230,6 @@ d3.json(bamConfigJson.bamMainDataLocation, function(error, graph) {
         nodeListHolder.push(graph.nodes[i].attributes.name);
         nodeListHolder.push(graph.nodes[i].index);
         nodeList.push(nodeListHolder);
-
     }
 
     function createInfoMasthead(d, prop) {
@@ -233,7 +256,7 @@ d3.json(bamConfigJson.bamMainDataLocation, function(error, graph) {
         }
 
         $('#right-side-headline').html(rSideHtmml);
-        var rightTextMainHolder = '<b>Attributes:</b> </br>';
+        var rightTextMainHolder = '<b>Network Statistics:</b> </br>';
         // go through our keys and attributes that we want to display
         // if the key is in our config file and in our data, display it
         for (var key in d.attributes) {
@@ -249,13 +272,14 @@ d3.json(bamConfigJson.bamMainDataLocation, function(error, graph) {
 
 
     function connectedNodes(d) {
-    
-    connectionsSearchTable.clear();
+
+        connectionsSearchTable.clear();
 
         var connectedList = [];
+        var linkStructureHolder = [];
 
-        
-        
+
+
         if (toggle == 0) {
             //Reduce the opacity of all but the neighbouring nodes
             node.style("opacity", function(o) {
@@ -263,84 +287,74 @@ d3.json(bamConfigJson.bamMainDataLocation, function(error, graph) {
                     // we do not want to list a self-connection
                     if (o != d) {
                         //connectedList[o.index] = o.attributes.name;
-                                var connectedListHolder = [];
+                        var connectedListHolder = [];
 
                         connectedListHolder.push(o.attributes.name);
-        connectedListHolder.push(o.index);
-        connectedList.push(connectedListHolder);
+                        connectedListHolder.push(o.index);
+                        connectedList.push(connectedListHolder);
                     }
                     return 1;
                 } else {
                     return .1;
                 }
             });
-            
+
             link.style("opacity", function(o) {
-                return d.index == o.source.index | d.index == o.target.index ? 1 : 0.1;
+                //expanded from the example to add more functionality
+                if (d.index == o.source.index || d.index == o.target.index) {
+                    // console.log(o);
+                    var tempLinkStructure = {};
+                    tempLinkStructure.sourceTitle = o.source.label;
+                    tempLinkStructure.sourceIndex = o.source.index;
+                    tempLinkStructure.targetTitle = o.target.label;
+                    tempLinkStructure.targetIndex = o.target.index;
+                    tempLinkStructure.connectionType = o.attributes.relationship;
+
+                    linkStructureHolder.push(tempLinkStructure);
+                    return 1;
+                } else {
+                    return .1;
+                }
             });
 
-
-if(connectedList.length > 0){
-connectionsSearchTable.rows.add(connectedList);
-}
-connectionsSearchTable.draw();
-
-//unbind the table before we reconstruct the bindings - this was adding issues earlier
-    $('#right-side-text-connected-list tbody').off('click');
-
-
-    $('#right-side-text-connected-list tbody').on('click', 'tr', function() {
-                    console.log(connectionsSearchTable.row(this).data());
-
-        var buttonIndex = connectionsSearchTable.row(this).data()[1];
-        svg.selectAll("circle").each(function(d, i) {
-
-            if (buttonIndex == d.index) {
-                                console.log("here");
-
-                createInfoMasthead(d, false);
-                connectedNodes(d);
-
-                zoomToD3Selection(d);
-
+            if (linkStructureHolder.length > 0) {
+                connectionsSearchTable.rows.add(linkStructureHolder);
             }
-        });
-    });
+
+            connectionsSearchTable.draw();
+
+            //unbind the table before we reconstruct the bindings - this was adding issues earlier
+            $('#right-side-text-connected-list tbody').off('click');
 
 
+            $('#right-side-text-connected-list tbody').on('click', 'tr', function() {
+                var data = connectionsSearchTable.row(this).data();
+                console.log(data);
+                if (data.sourceIndex != d.index) {
+                    buttonIndex = data.sourceIndex;
+                } else {
+                    buttonIndex = data.targetIndex;
 
-         /*   for (var property in connectedList) {
-                if (connectedList.hasOwnProperty(property)) {
-
-                    var $something = $('<input/>').attr({
-                        type: 'button',
-                        id: property,
-                        name: 'btn_' + connectedList[property],
-                        value: connectedList[property]
-                    });
-
-                    $something.click(function(event) {
-                        var buttonIndex = (event.currentTarget.id);
-                        //this is the button functionality I will have to use
-                        svg.selectAll("circle").each(function(d, i) {
-
-                            if (buttonIndex == d.index) {
-                                createInfoMasthead(d, false);
-                                connectedNodes(d);
-                                zoomToD3Selection(d);
-                            }
-                        });
-                    });
-                    $('#right-side-text-connected-list').append('<br />');
-                    $('#right-side-text-connected-list').append($something);
                 }
-            } */
+                svg.selectAll("circle").each(function(d2, i) {
+
+                    if (buttonIndex == d2.index) {
+                        createInfoMasthead(d2, false);
+                        connectedNodes(d2);
+                        zoomToD3Selection(d2);
+                    }
+                });
+            });
+
         } else {
             //Put them back to base opacity
             returnOpacity();
         }
     }
 
+//
+//Functions
+//
 
     function returnOpacity() {
         node.style("opacity", 1);
@@ -368,7 +382,7 @@ connectionsSearchTable.draw();
 
     //zooms to a selected node - we also style it as selected
     function zoomToD3Selection(d) {
-    	//style selection
+        //style selection
         styleD3Selection(d);
 
         if (centeredNode !== d) {
@@ -382,8 +396,8 @@ connectionsSearchTable.draw();
             k = 1;
             centeredNode = null;
         }
-        
-		//now move the viewport
+
+        //now move the viewport
         svg.transition()
             .duration(450)
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")

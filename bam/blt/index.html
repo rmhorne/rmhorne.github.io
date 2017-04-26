@@ -1,0 +1,327 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en-US">
+
+<head profile="http://www.w3.org/2005/10/profile">
+    <title>
+        BAM Base View
+    </title>
+    <link id="favicon" rel="icon" type="image/png" href="images/BAM-icon.png">
+    <meta charset="utf-8">
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            font-weight: lighter;
+            background-color: #f5f5f5;
+        }
+        /* for the connections between nodes */
+
+        .links line {
+            stroke: #000;
+            stroke-opacity: 0.5;
+            stroke-width: 1.2px;
+        }
+        /* for the nodes */
+
+        .nodes circle {
+            stroke: #000;
+            stroke-width: .5px;
+        }
+
+        div.tooltip {
+            position: absolute;
+            padding: 5px;
+            font: 12px sans-serif;
+            background: lightsteelblue;
+            border: 1px;
+            border-style: solid;
+            border-radius: 8px;
+            pointer-events: none;
+        }
+
+        #chart {
+            position: fixed;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            z-index: 999;
+            /* need to adjust the z-index later*/
+        }
+
+        #d3MainChart {
+            position: fixed;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+        }
+
+
+        #left-side-panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20%;
+            min-width: 300px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            padding: 0;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        #left-btn-slide-toggle {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            background-color: rgba(238, 238, 238, 0.85);
+            -moz-border-radius-topright: 5px;
+            -moz-border-radius-bottomright: 5px;
+            -webkit-border-top-right-radius: 5px;
+            -webkit-border-bottom-right-radius: 5px;
+            -khtml-border-radius-topright: 5px;
+            -khtml-border-radius-bottomright: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding: 10px 5px 10px 2px;
+            cursor: pointer;
+            z-index: 1000;
+            color: black;
+        }
+        
+        
+         #right-side-panel {
+            position: absolute;
+            top: 0;
+            right: -300px;
+            width: 20%;
+            min-width: 300px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            padding: 0;
+            box-sizing: border-box;
+            z-index: 1000;
+            overflow: scroll;
+        }
+
+        #right-btn-slide-toggle {
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            background-color: rgba(238, 238, 238, 0.85);
+            -moz-border-radius-topright: 5px;
+            -moz-border-radius-bottomright: 5px;
+            -webkit-border-top-right-radius: 5px;
+            -webkit-border-bottom-right-radius: 5px;
+            -khtml-border-radius-topright: 5px;
+            -khtml-border-radius-bottomright: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding: 10px 5px 10px 2px;
+            cursor: pointer;
+            z-index: 1000;
+            color: black;
+        }
+        
+        /* image container */
+
+        .navbar-image {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100px;
+            height: 100px;
+        }
+        /* image in the container */
+
+        .navbar-image img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .navbar-brand {
+            padding-left: 1%;
+            padding-top: 70px;
+            padding-bottom: 5px;
+            font-family: Trajan, 'Crimson Text', serif;
+            font-size: 200%;
+            font-weight: lighter;
+            letter-spacing: 1.5px;
+            text-shadow: none;
+            text-align: center;
+        }
+        
+         .right-title {
+            padding-left: 1%;
+            padding-top: 70px;
+            padding-bottom: 5px;
+            font-family: Trajan, 'Crimson Text', serif;
+            font-size: 120%;
+            font-weight: lighter;
+            letter-spacing: 1.5px;
+            text-shadow: none;
+            text-align: center;
+        }
+
+
+        .appLicense {
+            display: inline-block;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+        }
+        /* accordion layout following w3c demo */
+
+        button.accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 12px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+        button.accordion.active,
+        button.accordion:hover {
+            background-color: #ddd;
+        }
+        /* Style the accordion panel. Note: hidden by default */
+
+        div.panel {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+        }
+        /* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+
+        div.panel.show {
+            display: block;
+        }
+
+        .accordianImage {
+            height: 20px;
+            width: 20px;
+        }
+
+        button.accordionExp:after {
+            content: '\02795';
+            /* Unicode character for "plus" sign (+) */
+            font-size: 13px;
+            color: #777;
+            float: right;
+            margin-left: 5px;
+        }
+
+        button.accordionExp.active:after {
+            content: "\2796";
+            /* Unicode character for "minus" sign (-) */
+        }
+        
+        .right-side-text-main{
+                    padding-left: 3%;
+
+        }
+        
+          button.link { 
+          background:none;
+          border:none;
+                      font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            font-weight: lighter;
+                        font-family: Trajan, 'Crimson Text', serif;
+                        color: white;
+                        cursor:pointer;
+
+          
+           }
+
+    </style>
+
+    <!-- All the various libraries we will need  -->
+
+    <!-- jquery, as we allways wind up using it  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- d3js  -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Leaftlet and other mapping libraries-->
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <!-- Leaftlet buttons-->
+    <script src="../js/EasyButton/src/easy-button.js"></script>
+    <link rel="stylesheet" href="../js/EasyButton/src/easy-button.css" type="text/css" />
+    <!-- Leaftlet print-->
+    <script src="../js/easyPrint/dist/leaflet.easyPrint.js"></script>
+    <link rel="stylesheet" href="../js/easyPrint/dist/easyPrint.css" />
+    <!-- Leaftlet heat-->
+    <script src="../js/LeafletHeat/dist/leaflet-heat.js"></script>
+    <!-- Leaftlet cluster-->
+    <script src="../js/LeafletMarkerCluster/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="../js/LeafletMarkerCluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="../js/LeafletMarkerCluster/dist/MarkerCluster.Default.css" />
+
+
+
+    <!-- BAM Setup, after all necessary libraries are loaded -->
+    <script src="BAM-setup.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Containers--!>
+    <div id="d3MainChart">
+		<span id="left-side-panel">
+			<span id="navbar-image" class="navbar-image">
+    		</span>
+    		<div class="navbar-brand" id="navbar-brand">
+    		</div>
+			<br />
+			<br />
+			<span id="bamButtonHolder">
+			</span>
+			<div id="left-btn-slide-toggle" class="slider-icon">&#9664;
+			</div>
+    		<span id="appLicense" class="appLicense">
+    		</span>
+		</span>
+		<span id="right-side-panel">
+		<div id="right-btn-slide-toggle" class="slider-icon">&#9664;
+			</div>
+			<div id="right-side-headline" class="right-title">
+			</div>
+			<div id="right-side-text-main" class="right-side-text-main">
+			</div>
+			<div id="right-side-text-connected-list" class="right-side-text-main">
+			</div>
+			
+		</span>
+	</div>   
+</body>
+
+  
+
+    <!-- The main page functionality  -->
+    <script src="../BAM-core-functionality.js"></script>
+              <script src="../BAM-d3-only-networks.js"></script>
+
+    
+   
+</html>

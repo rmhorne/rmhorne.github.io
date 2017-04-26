@@ -204,6 +204,7 @@ d3.json(bamConfigJson.bamMainDataLocation, function(error, graph) {
                     }
                 });
                 link.style("opacity", function(o) {
+                console.log(o);
                     return d.index == o.source.index | d.index == o.target.index ? 1 : 0.1;
                 });
 
