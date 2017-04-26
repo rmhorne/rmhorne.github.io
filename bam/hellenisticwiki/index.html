@@ -140,7 +140,7 @@
             position: absolute;
             top: 0;
             right: -300px;
-            width: 20%;
+            width: 25%;
             min-width: 300px;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.85);
@@ -148,19 +148,20 @@
             padding: 5px;
             box-sizing: border-box;
             z-index: 1000;
- /* These are technically the same, but use both */
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+            /* These are technically the same, but use both */
+            overflow-wrap: break-word;
+            word-wrap: break-word;
 
-  -ms-word-break: break-all;
-  /* Instead use this non-standard one: */
-  word-break: break-word;
+            -ms-word-break: break-all;
+            /* Instead use this non-standard one: */
+            word-break: break-word;
 
-  /* Adds a hyphen where the word breaks, if supported (No Blink) */
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;        }
+            /* Adds a hyphen where the word breaks, if supported (No Blink) */
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
 
         #right-btn-slide-toggle {
             position: absolute;
@@ -220,16 +221,15 @@
             text-align: center;
         }
 
- .right-title-image {
-  display: block;
-  max-width:150px;
-  width: auto;
-  height: auto;
-      margin: 0 auto;
-      padding: 5px;
+        .right-title-image {
+            display: block;
+            max-width: 150px;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            padding: 5px;
+        }
 
-
- }
         .appLicense {
             display: inline-block;
             position: absolute;
@@ -384,21 +384,26 @@
             cursor: pointer;
             cursor: hand;
         }
-        
-        
-        .nodeResults{
-            position:relative;
-            }
 
 
-.darkText{
+        .nodeResults {
+            position: relative;
+        }
+
+
+        .darkText {
             color: black;
-            }
-            
-            .dtColumnHeader{
-                        background-color: #f5f5f5;
+        }
 
-            }
+        .dtColumnHeader {
+            background-color: #f5f5f5;
+        }
+        
+        .allow-scroll{
+    overflow-y: scroll;
+    position: relative;
+    height: 100%;
+}
     </style>
 
     <!-- All the various libraries we will need  -->
@@ -412,13 +417,10 @@
 
     <!-- jquery ui for interface enhancements-->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-  crossorigin="anonymous"></script>
-  
-  
-  
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
+
+
     <!-- data tables-->
     <script type='text/javascript' src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
     <link href='https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css' />
@@ -431,8 +433,8 @@
 
     <!-- data tables deault style for BAM-->
     <link rel="stylesheet" href="css/datatables.css" />
-  
-  
+
+
     <!-- BAM Setup, after all necessary libraries are loaded -->
     <script src="BAM-setup.js"></script>
 
@@ -472,17 +474,17 @@
 		
 		<!-- the right panel is generally reactive to user selections - will probably have to rename this to react panel or something like it--!>
 		<div id="right-side-panel">
+		<div id="right-side-inner" class="allow-scroll">
 		<div id="right-btn-slide-toggle" class="slider-icon">&#9664;
 			</div>
 			<div id="right-side-headline" class="right-title">
 			</div>
-							<button id="selectionAttributesListButton" class="accordion accordionExp"><img src="../images/open-iconic/list.svg" class="accordianImage" alt="magnifying-glass">&nbsp;&nbsp;&nbsp;&nbsp; More Information</button>
-					<div class="panel">
-						<div id="right-side-text-main" class="right-side-text-main darkText">
-			</div>
-					</div>
-		
-				</br>				
+				<button id="selectionAttributesListButton" class="accordion accordionExp"><img src="../images/open-iconic/list.svg" class="accordianImage" alt="magnifying-glass">&nbsp;&nbsp;&nbsp;&nbsp; More Information</button>
+				<div class="panel">
+					<div id="right-side-text-main" class="right-side-text-main darkText">
+				</div>
+				</div>
+				
 				<button id="connectionsResultsButton" class="accordion accordionExp"><img src="../images/network-diagram.svg" class="accordianImage" alt="magnifying-glass">&nbsp;&nbsp;&nbsp;&nbsp;Connections</button>
 					<div class="panel">
              <!-- this holds the autocomplete search--!>
@@ -490,16 +492,17 @@
 						<table id="right-side-text-connected-list" class="display darkText" width="100%">
 			  <thead>
         		<tr>
-            		<th>Name</th>
+            		<th>sourceTitle</th>
+            		<th>sourceIndex</th>
+            		<th>targetTitle</th>
+            		<th>targetIndex</th>
+            		<th>connectionType</th>
         		</tr>
    			 </thead>
 			</table>
 			</div>
-				
             </div>
-				
-				
-
+				</div>
 			</div>
 		</div>
 	</div>   
@@ -510,8 +513,8 @@
     <script src="../BAM-core-functionality.js"></script>
     <script src="js/BAM-custom-panels.js"></script>
     <script src="js/BAM-custom-menu.js"></script>
-       <!--   <script src="../BAM-d3-test.js"></script>  -->
-     <script src="../BAM-d3-only-networks.js"></script> 
+    <!--   <script src="../BAM-d3-test.js"></script>  -->
+    <script src="../BAM-d3-only-networks.js"></script>
 
     <script src="../BAM-cleanup.js"></script>
 
