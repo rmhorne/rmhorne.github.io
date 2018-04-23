@@ -1,0 +1,30 @@
+{
+	"bamPageTitle": "Cicero",
+	"bamFavIocn": "images/BAM-icon.png",
+	"bamLeftPanelTitleHtml": "<b>Cicero's Letters</b>",
+	"bamNavBarImageHtml": "<a href=\"https://www.lib.uiowa.edu/bam/\" target=\"_blank\"> <img src=\"images/BAM-icon.png\" title=\"BAM Icon\" alt=\"BAM Icon\"></a>",
+	"bamApplicationLicenseHtml": "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\"/></a>",
+	"bamdataSizeAttribute": "count",
+	"bamSizeDivider": "1.6",
+	"bamNodeMinSize": "3",
+	"bamNodeMaxSize": "25",
+	"bamMapSetViewX": "41.09591",
+	"bamMapSetViewY": "10.7666",
+	"bamMapSetViewZoom": "5",
+	"bamMapBaseLayer":{
+		"url": "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiaXNhd255dSIsImEiOiJBWEh1dUZZIn0.SiiexWxHHESIegSmW8wedQ",
+		"attribution":"Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>",
+		"maxZoom": "10",
+		"id": "isawnyu.map-knmctlkh",
+		"accessToken": "pk.eyJ1IjoiaXNhd255dSIsImEiOiJBWEh1dUZZIn0.SiiexWxHHESIegSmW8wedQ"
+	},
+	"bamMainDataLocation": "data/place_network.json",
+	"bamToolTipTitle": "title",
+	"bamStrokeWidth": "2",
+	"bamLatAttribute": "repLat",
+	"bamLonAttribute": "repLon",
+	"bamToolTipAttributes":{
+		"count": "Incoming Connections:",
+		"repLat": "Representative Latitude"
+	}
+}

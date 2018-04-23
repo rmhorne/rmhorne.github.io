@@ -1,0 +1,332 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en-US">
+
+<head profile="http://www.w3.org/2005/10/profile">
+    <title>
+        BAM Base View
+    </title>
+    <link id="favicon" rel="icon" type="image/png" href="images/BAM-icon.png">
+    <meta charset="utf-8">
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+        /* for the connections between nodes */
+
+        .links line {
+            stroke: #999;
+            stroke-opacity: 0.6;
+        }
+        /* for the nodes */
+
+        .nodes circle {
+            stroke: #000;
+            stroke-width: .5px;
+        }
+
+        div.tooltip {
+            position: absolute;
+            padding: 5px;
+            font: 12px sans-serif;
+            background: lightsteelblue;
+            border: 1px;
+            border-style: solid;
+            border-radius: 8px;
+            pointer-events: none;
+        }
+
+        #chart {
+            position: fixed;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            z-index: 999;
+            /* need to adjust the z-index later*/
+        }
+
+        #map {
+            position: fixed;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+        }
+    </style>
+
+    <!-- jquery, as we allways wind up using it  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- d3js  -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Leaftlet  -->
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+
+    <!-- BAM Setup, after all necessary libraries are loaded -->
+    <script src="BAM-setup.js"></script>
+</head>
+
+<body>
+
+	<!-- Containers - may move these to a config as well --!>
+    <div id="map">
+    </div>
+
+    <!-- The main page functionality  -->
+    <script>
+        //set the page title
+        $(document).prop('title', BamPageTitle);
+
+        //set the page favicon if different from default
+        $("#favicon").attr("href", BAMFavIocn);
+
+     	//now for map setup
+        var map = L.map('map');
+
+        //set the map zoom to our config file
+        map.setView([BAMMapSetViewX, BAMMapSetViewY], BAMMapSetViewZoom);
+
+        //add the default baselayer to our map
+        BAMMapBaseLayer.addTo(map);
+
+        //Toggle stores whether the highlighting is on
+        var toggle = 0;
+
+        // zoom from https://jsfiddle.net/skgktrcu/
+        var zoom = d3.zoom()
+            .scaleExtent([.2, 10])
+            .on("zoom", zoomed);
+
+        var chartDiv = document.getElementById("map");
+
+        // Extract the width and height that was computed by CSS.
+        var width = chartDiv.clientWidth;
+        var height = chartDiv.clientHeight;
+/*
+        var svg = d3.select(chartDiv).append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            //right now this overrides leaflet zoom 
+            //.call(zoom)
+            .append("g");
+         */
+         
+        //Initialize the SVG layer
+        L.svg().addTo(map);
+
+        //We simply pick up the SVG from the map object
+        var svg = d3.select("#map").select("svg"),
+           g = svg.append("g");
+
+		//setup the colors
+        var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+		//tooltip div
+        var div = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+        //some of the options from https://bl.ocks.org/syntagmatic/954b31aa8b8beb91b30ccb0c9e57f6ce
+
+        var simulation = d3.forceSimulation()
+            .force("link", d3.forceLink().id(function(d) {
+                return d.id;
+            }))
+            .force("collide", d3.forceCollide(function(d) {
+                return d.attributes[BAMdataSizeAttribute];
+            }).iterations(2))
+            .force("charge", d3.forceManyBody().strength(-10).distanceMax(300))
+            .force("center", d3.forceCenter(width / 2, height / 2))
+            .force("vertical", d3.forceY().strength(0.018))
+            .force("horizontal", d3.forceX().strength(0.006));
+
+        //after the map has been loaded, now load the d3js data and interact with our map
+        d3.json(BamMainDataLocation, function(error, graph) {
+            if (error) throw error;
+
+            //links are the lines connecting our nodes
+            var link = svg.append("g")
+                .attr("class", "links")
+                .selectAll("line")
+                .data(graph.edges)
+                .enter().append("line")
+                .attr("stroke-width", function(d) {
+                    return BamStrokeWidth;
+                });
+
+            var node = svg.append("g")
+                .attr("class", "nodes")
+                .selectAll("circle")
+                .data(graph.nodes)
+                .enter().append("circle")
+                .attr("r", function(d) {
+                    var sizer = d.attributes[BAMdataSizeAttribute] / BAMSizeDivider;
+                    if (sizer < BAMNodeMinimumSize) {
+                        return BAMNodeMinimumSize;
+                    } else {
+                        return sizer;
+                    }
+
+                    ;
+                })
+                .attr("fill", function(d) {
+                    return color(d.color);
+                })
+                .call(d3.drag()
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    .on("end", dragended))
+                .on("mouseover", function(d) {
+                    div.transition()
+                        .style("opacity", .9);
+                    var titleHtml = '<center><b>' + d.attributes[BamToolTipTitle] + '</b></center>';
+                    var attributesHtml = '<br />';
+
+                    for (i = 0; i < BamToolTipAttributes.length; i++) {
+                        attributesHtml = attributesHtml + BamToolTipAttributes[i];
+                        attributesHtml = attributesHtml + ': ' + d.attributes[BamToolTipAttributes[i]];
+                        attributesHtml = attributesHtml + '<br />';
+                    }
+
+                    //now to iterate through the array of attributes desired in the tooltip
+                    div.html(titleHtml + attributesHtml)
+                        .style("left", (d3.event.pageX) + "px")
+                        .style("top", (d3.event.pageY - 28) + "px")
+                        /* change the tooltip background to the node color */
+                        .style("background", color(d.color));
+                })
+                .on("mouseout", function(d) {
+                    div.transition()
+                        .style("opacity", 0);
+                })
+                .on("click", function(d) {
+                    connectedNodes(d);
+                    // the stop is necessary - see http://stackoverflow.com/questions/22941796/attaching-onclick-event-to-d3-chart-background  
+                    d3.event.stopPropagation();
+                });
+
+            node.append("title")
+                .text(function(d) {
+                    return d.id;
+                });
+
+            // this code highlights only the nodes that are connected to the nide that is clicked
+            //Create an array logging what is connected to what
+            //here going to have to modify the example as we are linking by id, not index!
+            var linkedByIndex = {};
+            for (i = 0; i < graph.nodes.length; i++) {
+                linkedByIndex[graph.nodes[i].id + "," + graph.nodes[i].id] = 1;
+            };
+            graph.edges.forEach(function(d) {
+                linkedByIndex[d.source + "," + d.target] = 1;
+            });
+            //This function looks up whether a pair are neighbours
+            function neighboring(a, b) {
+                return linkedByIndex[a.id + "," + b.id];
+            }
+
+            // see http://stackoverflow.com/questions/22941796/attaching-onclick-event-to-d3-chart-background
+            $("svg:not('.node')").on("click", function() {
+                returnOpacity();
+            });
+
+            /* now for the simulation / force layout */
+            simulation
+                .nodes(graph.nodes)
+                .on("tick", ticked);
+                
+            simulation.force("link")
+                .links(graph.edges);
+
+            /* the ticked function */
+            function ticked() {
+                link
+                    .attr("x1", function(d) {
+                        return d.source.x;
+                    })
+                    .attr("y1", function(d) {
+                        return d.source.y;
+                    })
+                    .attr("x2", function(d) {
+                        return d.target.x;
+                    })
+                    .attr("y2", function(d) {
+                        return d.target.y;
+                    });
+
+                node
+                    .attr("cx", function(d) {
+                        return d.x;
+                    })
+                    .attr("cy", function(d) {
+                        return d.y;
+                    });
+            }
+
+            function connectedNodes(d) {
+                if (toggle == 0) {
+                    //Reduce the opacity of all but the neighbouring nodes
+                    node.style("opacity", function(o) {
+                        return neighboring(d, o) | neighboring(o, d) ? 1 : 0.1;
+                    });
+                    link.style("opacity", function(o) {
+                        return d.index == o.source.index | d.index == o.target.index ? 1 : 0.1;
+                    });
+
+                } else {
+                    //Put them back to base opacity
+                    returnOpacity();
+                }
+            }
+
+            function returnOpacity() {
+
+                node.style("opacity", 1);
+                link.style("opacity", 1);
+                toggle = 0;
+            }
+
+            //escape key closes the attribute pane and restores the network.
+            $(document).keyup(function(e) {
+                if (e.keyCode == 27) { // escape key maps to keycode `27`
+                    returnOpacity();
+                }
+            });
+
+            zoom.scaleTo(svg, 1);
+
+            //end of the d3js block      
+        });
+
+        function dragstarted(d) {
+            if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(d) {
+            d.fx = d3.event.x;
+            d.fy = d3.event.y;
+        }
+
+        function dragended(d) {
+            if (!d3.event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+
+
+        function zoomed() {
+            svg.attr("transform", d3.event.transform);
+        }
+    </script>
+</body>
+
+</html>
