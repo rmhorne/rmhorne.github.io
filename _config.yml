@@ -83,7 +83,7 @@ author:
   name             : "Ryan M Horne"
   avatar           : "profile.png"
   bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
+  location         : "Los Angeles"
   employer         : "Univeristy of California, Los Angeles"
   pubmed           :
   googlescholar    : "https://scholar.google.com/citations?user=W02Rr54AAAAJ&hl=en"
@@ -98,6 +98,7 @@ author:
   foursquare       :
   github           : "https://github.com/rmhorne"
   google_plus      :
+  humanities commons          : "https://hcommons.org/members/rmhorne/"
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
