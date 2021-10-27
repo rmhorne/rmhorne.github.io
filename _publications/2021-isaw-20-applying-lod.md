@@ -1,0 +1,15 @@
+---
+title: "Applying Linked Open Data Standards "
+collection: publications
+permalink: /publication/2021-isaw-20-applying-lod
+excerpt: 'This chapter serves as an introduction to the essential concepts of Linked Open Data (LOD). Key to many digital humanities initiatives and research, LOD is a collaborative endeavor built upon open access principles; the discovery, reuse, and expansion of a vast array of data; and new avenues of review and publication which can differ greatly from traditional scholarly methodologies. LOD has already revolutionized the field of classical studies, with an ever-growing network of interlinked projects that offers exciting new opportunities for exploring spatial, textual, and material culture. In order for a project to take full advantage of the LOD ecosystem, it is necessary to align data with other LOD participants. This chapter provides practical examples and best practices for preparing project data, reconciling that data with other LOD initiatives, and publishing data as a LOD resource. It discusses new tools and techniques that make this process accessible to a wide audience of scholars and students, and provides a useful reference work for the other chapters in this collection.'
+date: 2021
+venue: 'ISAW Papers '
+paperurl: 'http://hdl.handle.net/2333.1/79cnpgk2. '
+citation: 'Horne, Ryan. “Applying Linked Open Data Standards.” In <i>Linked Open Data for the Ancient Mediterranean: Structures, Practices, Prospects</i>, edited by Sarah E. Bond, Paul C. Dilley, and Ryan Horne, Vol. 20. ISAW Papers. Institute for the Study of the Ancient World, 2021. '
+---
+This chapter serves as an introduction to the essential concepts of Linked Open Data (LOD). Key to many digital humanities initiatives and research, LOD is a collaborative endeavor built upon open access principles; the discovery, reuse, and expansion of a vast array of data; and new avenues of review and publication which can differ greatly from traditional scholarly methodologies. LOD has already revolutionized the field of classical studies, with an ever-growing network of interlinked projects that offers exciting new opportunities for exploring spatial, textual, and material culture. In order for a project to take full advantage of the LOD ecosystem, it is necessary to align data with other LOD participants. This chapter provides practical examples and best practices for preparing project data, reconciling that data with other LOD initiatives, and publishing data as a LOD resource. It discusses new tools and techniques that make this process accessible to a wide audience of scholars and students, and provides a useful reference work for the other chapters in this collection.
+
+[Download paper here](http://hdl.handle.net/2333.1/79cnpgk2. )
+
+Recommended citation: Horne, Ryan. “Applying Linked Open Data Standards.” In <i>Linked Open Data for the Ancient Mediterranean: Structures, Practices, Prospects</i>, edited by Sarah E. Bond, Paul C. Dilley, and Ryan Horne, Vol. 20. ISAW Papers. Institute for the Study of the Ancient World, 2021. 
