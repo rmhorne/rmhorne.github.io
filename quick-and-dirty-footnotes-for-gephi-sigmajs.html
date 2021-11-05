@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Quick and Dirty Footnotes For Gephi / SigmaJS | rmhorne
+</title>
+  <link rel="canonical" href="/quick-and-dirty-footnotes-for-gephi-sigmajs.html">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
+  <link rel="stylesheet" href="/theme/css/oldstyle.css">
+
+  
+  <meta name="description" content="Before I begin, I once again want to recognize the excellent SigmaJS Exporter plugin for Gephi. This really does mitigate a lot of the grunt work involved in quickly making a usable, interactive social network graph. However, sometimes you just want another feature or some further refinement - in my case …">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">rmhorne</a></h1>
+      <p class="text-muted">website of Ryan M Horne, P.h. D.</p>
+      <ul class="list-inline">
+            <li class="list-inline-item"><a href="/pages/about.html">About</a></li>
+            <li class="list-inline-item"><a href="/pages/courses.html">Courses</a></li>
+            <li class="list-inline-item"><a href="/pages/cv.html">CV</a></li>
+            <li class="list-inline-item"><a href="/pages/digital-portfolio.html">Digital Portfolio</a></li>
+            <li class="list-inline-item"><a href="/pages/publications.html">Publications</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="ai ai-orcid" href="https://orcid.org/0000-0002-5009-3116" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/rmhorne" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/RyanMHorne" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="ai ai-google-scholar" href="https://scholar.google.com/citations?user=W02Rr54AAAAJ&hl=en&oi=sra" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="ai ai-academia" href="https://ucla.academia.edu/RyanHorne" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Quick and Dirty Footnotes For Gephi / SigmaJS
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2015-10-31T00:00:00-07:00">
+          <i class="fas fa-clock"></i>
+          Sat 31 October 2015
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="/category/posts.html">Posts</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fas fa-user"></i>
+              <a href="/author/ryan-horne.html">Ryan Horne</a>          </li>
+          <li class="list-inline-item">
+            <i class="fas fa-tag"></i>
+              <a href="/tag/gephi.html">#gephi</a>,               <a href="/tag/social-networks.html">#social-networks</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p>Before I begin, I once again want to recognize the excellent <a href="https://marketplace.gephi.org/plugin/sigmajs-exporter/">SigmaJS Exporter</a> plugin for <a href="https://gephi.github.io/">Gephi</a>. This really does mitigate a lot of the grunt work involved in quickly making a usable, interactive social network graph. However, sometimes you just want another feature or some further refinement - in my case adding workable footnotes to information on each node.</p>
+<p>For those of us in the humanities, citations are <em>sine qua non</em> for scholarship. However, there are few good was to maintain linkable citations on the web that are not hardcoded beforehand, or reliant on javascript trickery. What I wanted to do was find a tool or a method to easily move text and citations contained in my dissertation to a description field in a <a href="https://gephi.github.io/">Gephi</a>-based application without manually entering footnotes, footnote numbers, or linking them myself, as I have over 2,000 footnotes to deal with.</p>
+<p>What I found is a bit of a hack, and certainly can be improved, but it works. First, you are going to want to have your document in a format that is readable by OpenOffice / LibreOffice / etc. What you need to do is select the bit of text you are interested in, dump it into a new file (making sure to include your footnotes!) and then export that file as XHTML.</p>
+<p><a href="https://ryanmatthewhorne.files.wordpress.com/2015/09/screen-shot-2015-09-26-at-9-51-26-pm.png"><img alt="export-text" src="https://ryanmatthewhorne.files.wordpress.com/2015/09/screen-shot-2015-09-26-at-9-51-26-pm.png?w=300"></a>Once this is complete, you will have a lovely, fully encapsulated xml file of your text - including all formatting, footnotes, etc. However, we want to eliminate some of the elements produced by this process. Open this file in your favorite text editor. You will notice that you have code similar to the following at the top of the document:</p>
+<p>[code language="html"]</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd">
+<p><html xmlns="http://www.w3.org/1999/xhtml">  <head profile="http://dublincore.org/documents/dcmi-terms/">  <title xml:lang="en-US">- no title specified</title>            [/code]</p>
+<p>This can all be eliminated. Make sure you retain the</p>
+<p>[code language="html"]</p>
+<!--This file was converted to xhtml by LibreOffice - see http://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.--><meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/><meta name="DCTERMS.title" content="" xml:lang="en-US"/><meta name="DCTERMS.language" content="en-US" scheme="DCTERMS.RFC4646"/><meta name="DCTERMS.source" content="http://xml.openoffice.org/odf2xhtml"/><meta name="DCTERMS.issued" content="2015-09-26T21:09:50.283345000" scheme="DCTERMS.W3CDTF"/><meta name="DCTERMS.modified" content="2015-09-26T21:23:01.904161000" scheme="DCTERMS.W3CDTF"/><meta name="DCTERMS.provenance" content="" xml:lang="en-US"/><meta name="DCTERMS.subject" content="," xml:lang="en-US"/><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" hreflang="en"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" hreflang="en"/><link rel="schema.DCTYPE" href="http://purl.org/dc/dcmitype/" hreflang="en"/><link rel="schema.DCAM" href="http://purl.org/dc/dcam/" hreflang="en"/><style type="text/css"> \[/code\]
+
+tag at the end of the line.
+
+Likewise, delete this from the start of the last line:
+
+\[code language="html"\] </head><body dir="ltr" style="max-width:8.5in;margin-top:0.7874in; margin-bottom:0.7874in; margin-left:0.7874in; margin-right:0.7874in; writing-mode:lr-tb; "> \[/code\]
+
+and this from the end of the last line:
+
+\[code language="html"\] </body></html> \[/code\]
+
+Now, simply paste what is left into a field in your Gephi data.
+
+[![Gephi with footnotes](https://ryanmatthewhorne.files.wordpress.com/2015/10/screen-shot-2015-09-26-at-9-50-21-pm.png?w=300)](https://ryanmatthewhorne.files.wordpress.com/2015/10/screen-shot-2015-09-26-at-9-50-21-pm.png)
+
+Export as usual, and viola! you have your clickable, interactive footnotes.
+
+[![footnote-gephi](https://ryanmatthewhorne.files.wordpress.com/2015/10/footnote-gephi.png?w=300)](https://ryanmatthewhorne.files.wordpress.com/2015/10/footnote-gephi.png)
+
+Now, this is good for a quick and dirty solution, but it would require a modification of the json datafile if you ever make a change or wish to add more information (or, even worse, a re-export of your entire network). As such, this solution will not be used for BAM, as we are seeking a more flexible and modifiable code base.
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="/authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="/categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="/tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
+</body>
+
+</html>

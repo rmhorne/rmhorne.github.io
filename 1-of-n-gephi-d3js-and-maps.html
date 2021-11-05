@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  1 of N: Gephi, D3.js, and maps | rmhorne
+</title>
+  <link rel="canonical" href="/1-of-n-gephi-d3js-and-maps.html">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
+  <link rel="stylesheet" href="/theme/css/oldstyle.css">
+
+  
+  <meta name="description" content="Update (11/12/15): See this post to integrate the following code with leaflet. After finding no real way to use background maps with SigmaJs, I stumbled on this example of combining leaflet with D3.js: http://bost.ocks.org/mike/leaflet/. The example is more closely aligned with what …">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">rmhorne</a></h1>
+      <p class="text-muted">website of Ryan M Horne, P.h. D.</p>
+      <ul class="list-inline">
+            <li class="list-inline-item"><a href="/pages/about.html">About</a></li>
+            <li class="list-inline-item"><a href="/pages/courses.html">Courses</a></li>
+            <li class="list-inline-item"><a href="/pages/cv.html">CV</a></li>
+            <li class="list-inline-item"><a href="/pages/digital-portfolio.html">Digital Portfolio</a></li>
+            <li class="list-inline-item"><a href="/pages/publications.html">Publications</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="ai ai-orcid" href="https://orcid.org/0000-0002-5009-3116" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/rmhorne" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/RyanMHorne" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="ai ai-google-scholar" href="https://scholar.google.com/citations?user=W02Rr54AAAAJ&hl=en&oi=sra" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="ai ai-academia" href="https://ucla.academia.edu/RyanHorne" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  1 of N: Gephi, D3.js, and maps
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2015-11-07T00:00:00-08:00">
+          <i class="fas fa-clock"></i>
+          Sat 07 November 2015
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="/category/posts.html">Posts</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fas fa-user"></i>
+              <a href="/author/ryan-horne.html">Ryan Horne</a>          </li>
+          <li class="list-inline-item">
+            <i class="fas fa-tag"></i>
+              <a href="/tag/d3-js.html">#d3-js</a>,               <a href="/tag/gephi.html">#gephi</a>,               <a href="/tag/javascript.html">#javascript</a>,               <a href="/tag/social-networks.html">#social-networks</a>,               <a href="/tag/bam.html">#bam</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p><strong>Update (11/12/15):</strong> See <a href="https://ryanmatthewhorne.wordpress.com/2015/11/11/2-of-n-gephi-d3-js-and-maps-success/">this post</a> to integrate the following code with leaflet.</p>
+<p>After finding no real way to use background maps with <a href="http://sigmajs.org/">SigmaJs</a>, I stumbled on this example of combining leaflet with <a href="http://d3js.org/">D3.js</a>: <a href="http://bost.ocks.org/mike/leaflet/">http://bost.ocks.org/mike/leaflet/</a>. The example is more closely aligned with what I want to achieve, which is using a display library to show a social network that respects / interacts with underlying geography. This would be a very valuable visualization for both <a href="https://bigancientmediterranean.wordpress.com/">TBib/BAM</a> and <a href="http://awmc.unc.edu/awmc/applications/snagg/">my own work on garrisons</a>, and completing it will allow me to get back to other tasks, like pounding out Greek inscriptions.</p>
+<p>For this work I am not tied to <a href="https://gephi.github.io/">Gephi</a>, but I do like its interface and low learning curve, which is valuable for pedagogical and collaborative use. So, my first order of business is getting a <a href="https://gephi.github.io/">Gephi</a> project to talk nicely with <a href="http://d3js.org/">D3.js</a>. There is, of course, a nice example already in the wild: <a href="http://bl.ocks.org/susielu/9526340">http://bl.ocks.org/susielu/9526340</a>. However, this presented some serious problems, which I will outline to (hopefully!) help others who may be going down this path. So, refer back to <a href="http://bl.ocks.org/susielu/9526340">http://bl.ocks.org/susielu/9526340</a> for the code template - what follows below are additions / modifications.</p>
+<p><a href="https://ryanmatthewhorne.files.wordpress.com/2015/10/geo-attempr.png"><img alt="geo-attempr" src="https://ryanmatthewhorne.files.wordpress.com/2015/10/geo-attempr.png?w=150"></a>For this project, I want to recreate the image to the right, which was created in <a href="https://gephi.github.io/">Gephi</a>. If you read <a href="https://ryanmatthewhorne.wordpress.com/2015/10/07/networks-geography-and-gephi-lots-of-promise-but-lots-of-work-to-be-done/">my previous post</a> on this topic, this image uses a <a href="https://marketplace.gephi.org/plugin/geolayout/">geo-layout plugin</a> to place locations from <a href="http://pleiades.stoa.org/">Pleiades</a> in their correct geographic placement, then uses other layouts to place the people and other non locatable nodes. The eventual goal is to make an interactive network map above an interactive geographic map, so simply exporting these out as a flat svg file will not provide the functionality I need.</p>
+<p>My first attempt to simply plug in my own data met with disaster. First, I got hit with an "<em>Uncaught TypeError: Cannot read property 'weight' of undefined</em>" error and absolutely no graph. Looking into it, I noticed that the example assumed that nodes would be referenced by their position in an index, NOT by their own id.</p>
+<p>[code language="javascript"]</p>
+<p>var links = json.edges.map(function(d){ return { 'source': parseInt(d.source), 'target': parseInt(d.target) } }) [/code]</p>
+<p>My linkages use a unique ID text attribute, which plays havoc with this function. However, this seems like a simple fix: simply remove the <em>parseInt()</em> function, and the actual linkages should work.</p>
+<p>[code language="javascript"]</p>
+<p>var links = json.edges.map(function(d){ return { 'source': d.source, 'target': d.target } }) [/code]</p>
+<p><a href="https://ryanmatthewhorne.files.wordpress.com/2015/10/netminusnet.png"><img alt="netminusnet" src="https://ryanmatthewhorne.files.wordpress.com/2015/10/netminusnet.png?w=300"></a>Getting closer: I see a network graph....only minus the network. Yikes. So, what is going wrong?</p>
+<p>It seems that linking nodes by attribute instead of index is a somewhat common problem in <a href="http://d3js.org/">D3.js</a>, with a good solution here: <a href="http://stackoverflow.com/questions/23986466/d3-force-layout-linking-nodes-by-name-instead-of-index">http://stackoverflow.com/questions/23986466/d3-force-layout-linking-nodes-by-name-instead-of-index</a>. Following this example, I modified my code by adding the following:</p>
+<p>[code language="javascript"]</p>
+<p>var edges = []; links.forEach(function(e) { // Get the source and target nodes var sourceNode = nodes.filter(function(n) { return n.id === e.source; })[0], targetNode = nodes.filter(function(n) { return n.id === e.target; })[0];</p>
+<p>// Add the edge to the array edges.push({source: sourceNode, target: targetNode}); });</p>
+<p>...</p>
+<p>var force = d3.layout.force() .nodes(nodes) .links(edges)</p>
+<p>...</p>
+<p>var link = svg.selectAll(".link") .data(edges)</p>
+<p>[/code]</p>
+<p><a href="https://ryanmatthewhorne.files.wordpress.com/2015/10/working.png"><img alt="working" src="https://ryanmatthewhorne.files.wordpress.com/2015/10/working.png?w=300"></a>Finally, the links show! The nodes, however, are of a uniform size. I want the nodes to reflect their size in Gephi. Luckily this was an easy fix: adding</p>
+<p>[code language="javascript"]</p>
+<p>.attr("r", function(d) { return d.size * 3; })</p>
+<p>[/code]</p>
+<p>to</p>
+<p>[code langauge="javascript"] node.append("svg:circle") [/code]</p>
+<p>did the trick. I also wanted to add colors from Gephi - the following code does so (with a conversion from RGB to hex provided by <a href="http://stackoverflow.com/questions/13070054/convert-rgb-strings-to-hex-in-javascript">http://stackoverflow.com/questions/13070054/convert-rgb-strings-to-hex-in-javascript</a>) :</p>
+<p>[code language="javascript"]</p>
+<p>var a = d.color.split("(")[1].split(")")[0]; a = a.split(",");</p>
+<p>var b = a.map(function(x){ //For each array element x = parseInt(x).toString(16); //Convert to a base16 string return (x.length==1) ? "0"+x : x; //Add zero if we get only one character })</p>
+<p>b = "#"+b.join("");</p>
+<p>return { 'id' : d.id, 'x' : d.x, 'y' : d.y, 'fixed': true, 'label' : d.label, 'size' : d.size, 'color' : b, } })</p>
+<p>[/code]</p>
+<p>and</p>
+<p>[code language="javascript"]</p>
+<p>.style("fill", function (d) { return d.color; })</p>
+<p>[/code]</p>
+<p>added to</p>
+<p>[code language="javascript"]</p>
+<p>node.append("svg:circle")</p>
+<p>[/code]</p>
+<p><a href="https://ryanmatthewhorne.files.wordpress.com/2015/10/onemoreproblem.png"><img alt="onemoreproblem" src="https://ryanmatthewhorne.files.wordpress.com/2015/10/onemoreproblem.png?w=300"></a>This produces a graph that looks correct except for one <strong>MAJOR</strong> problem: It seems the Y axis is inverted from the original! This is obviously not acceptable if I am trying to capture actual coordinates for a map. All is not lost: I do remember this being a problem in the SigmaJS exporter. A fix is provided here: <a href="https://github.com/oxfordinternetinstitute/gephi-plugins/issues/5#issuecomment-22291683">https://github.com/oxfordinternetinstitute/gephi-plugins/issues/5#issuecomment-22291683</a>. For me, this was as simple as adding the following code:</p>
+<p>[code language="javascript"]</p>
+<p>finalY = -d.y; return { 'id' : d.id, 'x' : d.x, 'y' : finalY, 'fixed': true, 'label' : d.label, 'size' : d.size, 'color' : b, }</p>
+<p>})</p>
+<p>[/code]</p>
+<p>to the</p>
+<p>[code language="javscript"]   var nodes = json.nodes.map(function(d) [/code]</p>
+<p>block.</p>
+<p><a href="https://ryanmatthewhorne.files.wordpress.com/2015/10/inorder.png"><img alt="inorder" src="https://ryanmatthewhorne.files.wordpress.com/2015/10/inorder.png?w=300"></a>The next task will be to finalize some functionality for the D3.js portion of the graph, then on to integrating the whole mess with <a href="http://leafletjs.com/">leaflet</a>. Then, when I have all of this in order, time to re-write it to accept all manner of different inputs / etc for BAM. More on both of these ideas later.</p>
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="/authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="/categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="/tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
+</body>
+
+</html>
