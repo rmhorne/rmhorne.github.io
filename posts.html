@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Ryan M Horne - Posts</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Ryan M Horne</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./cv.html">
+ <span class="menu-text">Ryan Horne CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./posts.html" aria-current="page">
+ <span class="menu-text">Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./digital-portfolio.html">
+ <span class="menu-text">Digital Portfolio</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/rmhorne"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://orcid.org/0000-0002-5009-3116">
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://hcommons.social/web/@rmhorne"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/RyanMHorne"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(16)</span></div><div class="category" data-category="bam">bam <span class="quarto-category-count">(3)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(4)</span></div><div class="category" data-category="information">information <span class="quarto-category-count">(1)</span></div><div class="category" data-category="maps">maps <span class="quarto-category-count">(5)</span></div><div class="category" data-category="social-networks">social-networks <span class="quarto-category-count">(8)</span></div></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Posts</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1591081200000" data-listing-file-modified-sort="1667592122262" data-listing-reading-time-sort="0.605">
+<div class="thumbnail">
+<p><a href="./posts/aeolian-alexanders-launches.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2020/06/site_annoucement.png?w=1024" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/aeolian-alexanders-launches.html">
+<h3 class="no-anchor listing-title">
+Aeolian Alexanders Launches
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+I am pleased to announce the launch of <em>Aeolian Alexanders</em>, a NEH-Mellon funded digital publication project. This combines social network analysis…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/aeolian-alexanders-launches.html">
+<div class="listing-date">
+Jun 2, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="information,maps,social-networks" data-listing-date-sort="1556262000000" data-listing-file-modified-sort="1667592122237" data-listing-reading-time-sort="1.705">
+<div class="thumbnail">
+<a href="./posts/talk-at-ucsb-on-may-20th-mediterranean-pathways-gis-network-analysis-and-the-ancient-world.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/talk-at-ucsb-on-may-20th-mediterranean-pathways-gis-network-analysis-and-the-ancient-world.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/talk-at-ucsb-on-may-20th-mediterranean-pathways-gis-network-analysis-and-the-ancient-world.html">
+<h3 class="no-anchor listing-title">
+Talk at UCSB on May 20th: Mediterranean Pathways: GIS, Network Analysis, and the Ancient World
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('information'); return false;">
+information
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('maps'); return false;">
+maps
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('social-networks'); return false;">
+social-networks
+</div>
+</div>
+<a href="./posts/talk-at-ucsb-on-may-20th-mediterranean-pathways-gis-network-analysis-and-the-ancient-world.html">
+<div class="listing-description">
+I will be delivering a talk May 20th at 12:15 at UCSB (location TBD) entitled <em>Mediterranean Pathways: GIS, Network Analysis, and the Ancient World</em> on some of the geospatial and network analysis I have been performing with my own…<em></em><em></em><em></em>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/talk-at-ucsb-on-may-20th-mediterranean-pathways-gis-network-analysis-and-the-ancient-world.html">
+<div class="listing-date">
+Apr 26, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1541923200000" data-listing-file-modified-sort="1667592122213" data-listing-reading-time-sort="7.595">
+<div class="thumbnail">
+<p><a href="./posts/what-do-you-do-with-36409-places-and-6506-connections-some-cartographic-representations-of-pleiades-data.html"> <img src="./posts/images/overview.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/what-do-you-do-with-36409-places-and-6506-connections-some-cartographic-representations-of-pleiades-data.html">
+<h3 class="no-anchor listing-title">
+What do you do with 36,409 places and 6,506 connections? Some cartographic representations of Pleiades data
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+Two projects that I am involved with, Pleiades and the World-Historical Gazetteer at the University of Pittsburgh, have been devoting considerable time and energy to modeling conceptual places and their connections, so I thought it was worth discussing…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/what-do-you-do-with-36409-places-and-6506-connections-some-cartographic-representations-of-pleiades-data.html">
+<div class="listing-date">
+Nov 11, 2018
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1531983600000" data-listing-file-modified-sort="1667592122188" data-listing-reading-time-sort="0.88">
+<div class="thumbnail">
+<a href="./posts/ancient-itineraries-the-digital-lives-of-art-history.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/ancient-itineraries-the-digital-lives-of-art-history.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/ancient-itineraries-the-digital-lives-of-art-history.html">
+<h3 class="no-anchor listing-title">
+Ancient Itineraries: The Digital Lives of Art History
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+I am very happy to announce that I have been chosen as a participant for&nbsp;<em><strong>Ancient Itineraries: The Digital Lives of Art History</strong></em> institute, which is…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/ancient-itineraries-the-digital-lives-of-art-history.html">
+<div class="listing-date">
+Jul 19, 2018
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1513756800000" data-listing-file-modified-sort="1667592122162" data-listing-reading-time-sort="0.225">
+<div class="thumbnail">
+<p><a href="./posts/neh-mellon-fellowship-for-digital-publication-2017.html"> <img src="./posts/images/neh_logo_horizontal_2c_c_outl_0.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/neh-mellon-fellowship-for-digital-publication-2017.html">
+<h3 class="no-anchor listing-title">
+NEH-Mellon Fellowship for Digital Publication
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+I am pleased to announce that I received a&nbsp;NEH-Mellon Fellowship for Digital Publication to continue my work on&nbsp;digital die studies and Aeolian…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/neh-mellon-fellowship-for-digital-publication-2017.html">
+<div class="listing-date">
+Dec 20, 2017
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1493190000000" data-listing-file-modified-sort="1667592122138" data-listing-reading-time-sort="1.5">
+<div class="thumbnail">
+<a href="./posts/sna-wikipedia-and-the-hellenistic-world.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/sna-wikipedia-and-the-hellenistic-world.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/sna-wikipedia-and-the-hellenistic-world.html">
+<h3 class="no-anchor listing-title">
+SNA, Wikipedia, and the Hellenistic World
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+Part of my work on the&nbsp;<em>Big Ancient Mediterranean</em> project involves creating a general software framework that can…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/sna-wikipedia-and-the-hellenistic-world.html">
+<div class="listing-date">
+Apr 26, 2017
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="maps" data-listing-date-sort="1488096000000" data-listing-file-modified-sort="1667592122112" data-listing-reading-time-sort="0.97">
+<div class="thumbnail">
+<a href="./posts/asia-minor-in-the-second-century-ce-a-new-wall-map-from-the-awmc.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/asia-minor-in-the-second-century-ce-a-new-wall-map-from-the-awmc.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/asia-minor-in-the-second-century-ce-a-new-wall-map-from-the-awmc.html">
+<h3 class="no-anchor listing-title">
+Asia Minor in the Second Century CE: A New Wall Map From the Ancient World Mapping Center
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('maps'); return false;">
+maps
+</div>
+</div>
+<a href="./posts/asia-minor-in-the-second-century-ce-a-new-wall-map-from-the-awmc.html">
+<div class="listing-description">
+The Ancient World Mapping Center&nbsp;at UNC Chapel Hill has just released a 1:750,000 scale map of Roman Asia Minor in the Second Century CE under CC BY 4.0. Several years in the making, this map is&nbsp;a collaboration between several different directors of the center (including myself), domain experts, and other historians, and it…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/asia-minor-in-the-second-century-ce-a-new-wall-map-from-the-awmc.html">
+<div class="listing-date">
+Feb 26, 2017
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="social-networks" data-listing-date-sort="1479024000000" data-listing-file-modified-sort="1667592122087" data-listing-reading-time-sort="3.875">
+<div class="thumbnail">
+<p><a href="./posts/reporthate-whywereafraid-and-sna.html"> <img src="./posts/images/maincomp.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/reporthate-whywereafraid-and-sna.html">
+<h3 class="no-anchor listing-title">
+ReportHate, whywereafraid, and SNA
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('social-networks'); return false;">
+social-networks
+</div>
+</div>
+<a href="./posts/reporthate-whywereafraid-and-sna.html">
+<div class="listing-description">
+With increasing social media incidents of election-related violence on twitter and social media, I decided to perform a quick network analysis of #ReportHate&nbsp;and whywereafraid&nbsp;(which, as of this writing, has removed its twitter link from its site). I am interested&nbsp;in examining the development&nbsp;of these online communities, if there are significant…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/reporthate-whywereafraid-and-sna.html">
+<div class="listing-date">
+Nov 13, 2016
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="maps,social-networks" data-listing-date-sort="1478415600000" data-listing-file-modified-sort="1667592122062" data-listing-reading-time-sort="17.645">
+<div class="thumbnail">
+<p><a href="./posts/nodapl-twitter-analysis.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2016/11/dapl_routes_map_large.png?w=2048" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/nodapl-twitter-analysis.html">
+<h3 class="no-anchor listing-title">
+NoDAPL Twitter Analysis
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('maps'); return false;">
+maps
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('social-networks'); return false;">
+social-networks
+</div>
+</div>
+<a href="./posts/nodapl-twitter-analysis.html">
+<div class="listing-description">
+<strong>Introduction:</strong>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/nodapl-twitter-analysis.html">
+<div class="listing-date">
+Nov 6, 2016
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-categories="social-networks" data-listing-date-sort="1474959600000" data-listing-file-modified-sort="1667592122037" data-listing-reading-time-sort="4.69">
+<div class="thumbnail">
+<a href="./posts/gephi-conspiracies-and-sna-in-the-classroom-midterm-thoughts.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/gephi-conspiracies-and-sna-in-the-classroom-midterm-thoughts.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/gephi-conspiracies-and-sna-in-the-classroom-midterm-thoughts.html">
+<h3 class="no-anchor listing-title">
+Gephi, Conspiracies, and SNA in the Classroom: Midterm Thoughts
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('social-networks'); return false;">
+social-networks
+</div>
+</div>
+<a href="./posts/gephi-conspiracies-and-sna-in-the-classroom-midterm-thoughts.html">
+<div class="listing-description">
+This semester I designed a class, <em>Introduction to Social Networks and Conspiracy Theories</em>, that makes extensive use of Gephi&nbsp;along with&nbsp;the downloadable version of&nbsp;<em>Networks, Crowds, and Markets: Reasoning About a Highly…</em>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/gephi-conspiracies-and-sna-in-the-classroom-midterm-thoughts.html">
+<div class="listing-date">
+Sep 27, 2016
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-categories="bam" data-listing-date-sort="1465455600000" data-listing-file-modified-sort="1667592122012" data-listing-reading-time-sort="6.485">
+<div class="thumbnail">
+<p><a href="./posts/reflections-on-the-bam-conference.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2016/06/bam2016_final.jpg?w=464" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/reflections-on-the-bam-conference.html">
+<h3 class="no-anchor listing-title">
+Reflections on the BAM Conference
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bam'); return false;">
+bam
+</div>
+</div>
+<a href="./posts/reflections-on-the-bam-conference.html">
+<div class="listing-description">
+I had the absolute privilege of attending the Big Ancient Mediterranean Conference (#BAM2016) this week. The remarkable projects, enthusiasm for all things digital, and congenial atmosphere was inspiring. Now that the conference has ended, I think it is a good time…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/reflections-on-the-bam-conference.html">
+<div class="listing-date">
+Jun 9, 2016
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-categories="code,maps,social-networks" data-listing-date-sort="1447228800000" data-listing-file-modified-sort="1667592121987" data-listing-reading-time-sort="8.14">
+<div class="thumbnail">
+<p><a href="./posts/2-of-n-gephi-d3-js-and-maps-success.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2015/11/gephileafletd3js.png?w=300" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/2-of-n-gephi-d3-js-and-maps-success.html">
+<h3 class="no-anchor listing-title">
+2 of N: Gephi, D3.js, and maps: Success!
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('maps'); return false;">
+maps
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('social-networks'); return false;">
+social-networks
+</div>
+</div>
+<a href="./posts/2-of-n-gephi-d3-js-and-maps-success.html">
+<div class="listing-description">
+[caption id=“attachment_251” align=“alignright” width=“300”] A working, geographically accurate map using Gephi, D3.js, and Leaflet. NOTE: Link subject to change.[/caption]
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2-of-n-gephi-d3-js-and-maps-success.html">
+<div class="listing-date">
+Nov 11, 2015
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-categories="bam,code,social-networks" data-listing-date-sort="1446883200000" data-listing-file-modified-sort="1667592121962" data-listing-reading-time-sort="3.825">
+<div class="thumbnail">
+<p><a href="./posts/1-of-n-gephi-d3-js-and-maps.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2015/10/geo-attempr.png?w=150" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/1-of-n-gephi-d3-js-and-maps.html">
+<h3 class="no-anchor listing-title">
+1 of N: Gephi, D3.js, and maps
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bam'); return false;">
+bam
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('social-networks'); return false;">
+social-networks
+</div>
+</div>
+<a href="./posts/1-of-n-gephi-d3-js-and-maps.html">
+<div class="listing-description">
+<strong>Update (11/12/15):</strong> See this post&nbsp;to integrate the following code with leaflet.
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/1-of-n-gephi-d3-js-and-maps.html">
+<div class="listing-date">
+Nov 7, 2015
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="13" data-categories="code,social-networks" data-listing-date-sort="1446274800000" data-listing-file-modified-sort="1667592121912" data-listing-reading-time-sort="2.42">
+<div class="thumbnail">
+<p><a href="./posts/quick-and-dirty-footnotes-for-gephi-sigmajs.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2015/09/screen-shot-2015-09-26-at-9-51-26-pm.png?w=300" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/quick-and-dirty-footnotes-for-gephi-sigmajs.html">
+<h3 class="no-anchor listing-title">
+Quick and Dirty Footnotes For Gephi / SigmaJS
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('social-networks'); return false;">
+social-networks
+</div>
+</div>
+<a href="./posts/quick-and-dirty-footnotes-for-gephi-sigmajs.html">
+<div class="listing-description">
+Before I begin, I once again want to recognize the excellent SigmaJS Exporter plugin for Gephi. This really does mitigate a lot of the grunt work involved in quickly&nbsp;making a usable, interactive social network graph. However, sometimes you just want another feature…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/quick-and-dirty-footnotes-for-gephi-sigmajs.html">
+<div class="listing-date">
+Oct 31, 2015
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="14" data-categories="maps,social-networks" data-listing-date-sort="1444201200000" data-listing-file-modified-sort="1667592121937" data-listing-reading-time-sort="6.33">
+<div class="thumbnail">
+<p><a href="./posts/networks-geography-and-gephi-lots-of-promise-but-lots-of-work-to-be-done.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2015/10/screen-shot-2015-10-07-at-1-40-46-pm.png?w=300" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/networks-geography-and-gephi-lots-of-promise-but-lots-of-work-to-be-done.html">
+<h3 class="no-anchor listing-title">
+Networks, Geography, and Gephi: Lots of Promise, but Lots of Work to be Done
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('maps'); return false;">
+maps
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('social-networks'); return false;">
+social-networks
+</div>
+</div>
+<a href="./posts/networks-geography-and-gephi-lots-of-promise-but-lots-of-work-to-be-done.html">
+<div class="listing-description">
+This post will outline…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/networks-geography-and-gephi-lots-of-promise-but-lots-of-work-to-be-done.html">
+<div class="listing-date">
+Oct 7, 2015
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="15" data-categories="bam,code" data-listing-date-sort="1443423600000" data-listing-file-modified-sort="1667592121886" data-listing-reading-time-sort="7.595">
+<div class="thumbnail">
+<p><a href="./posts/code-for-bam-part-1-of-n-gephi-and-maps.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2015/09/tbib-select.png?w=300" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/code-for-bam-part-1-of-n-gephi-and-maps.html">
+<h3 class="no-anchor listing-title">
+Code for BAM: Part 1 of N. Gephi and Maps
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bam'); return false;">
+bam
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+</div>
+<a href="./posts/code-for-bam-part-1-of-n-gephi-and-maps.html">
+<div class="listing-description">
+This is the first in&nbsp;a series of posts where I will be detailing some of the code and development of BAM.&nbsp;Some of these techniques may be old hat for some users or simple hacks…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/code-for-bam-part-1-of-n-gephi-and-maps.html">
+<div class="listing-date">
+Sep 28, 2015
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div><p><br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
