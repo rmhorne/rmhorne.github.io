@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/posts.html",
+    "listing": "/index.html",
     "items": [
       "/posts/aeolian-alexanders-launches.html",
       "/posts/talk-at-ucsb-on-may-20th-mediterranean-pathways-gis-network-analysis-and-the-ancient-world.html",
@@ -21,7 +21,7 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/posts.html",
     "items": [
       "/posts/aeolian-alexanders-launches.html",
       "/posts/talk-at-ucsb-on-may-20th-mediterranean-pathways-gis-network-analysis-and-the-ancient-world.html",

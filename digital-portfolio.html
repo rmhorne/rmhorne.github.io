@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -55,7 +55,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -74,48 +75,50 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Ryan M Horne</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html">
- <span class="menu-text">Ryan Horne CV</span></a>
+    <a class="nav-link" href="./cv.html" rel="" target="">
+ <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts.html">
+    <a class="nav-link" href="./posts.html" rel="" target="">
  <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./digital-portfolio.html" aria-current="page">
+    <a class="nav-link active" href="./digital-portfolio.html" rel="" target="" aria-current="page">
  <span class="menu-text">Digital Portfolio</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/rmhorne"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/rmhorne" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://orcid.org/0000-0002-5009-3116">
+    <a class="nav-link" href="https://orcid.org/0000-0002-5009-3116" rel="" target="">
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://hcommons.social/web/@rmhorne"><i class="bi bi-mastodon" role="img">
+    <a class="nav-link" href="https://hcommons.social/web/@rmhorne" rel="" target=""><i class="bi bi-mastodon" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/RyanMHorne"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/RyanMHorne" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -129,10 +132,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#digital-gazetteers" id="toc-digital-gazetteers" class="nav-link active" data-scroll-target="#digital-gazetteers">Digital Gazetteers</a></li>
+  <li><a href="#publication" id="toc-publication" class="nav-link active" data-scroll-target="#publication">Publication</a>
+  <ul class="collapse">
+  <li><a href="#aeolian-alexanders" id="toc-aeolian-alexanders" class="nav-link" data-scroll-target="#aeolian-alexanders">Aeolian Alexanders</a></li>
+  </ul></li>
+  <li><a href="#digital-gazetteers" id="toc-digital-gazetteers" class="nav-link" data-scroll-target="#digital-gazetteers">Digital Gazetteers</a></li>
   <li><a href="#network-analysis" id="toc-network-analysis" class="nav-link" data-scroll-target="#network-analysis">Network Analysis</a></li>
   <li><a href="#web-applications" id="toc-web-applications" class="nav-link" data-scroll-target="#web-applications">Web Applications</a></li>
-  <li><a href="#geographic-information-systems" id="toc-geographic-information-systems" class="nav-link" data-scroll-target="#geographic-information-systems">Geographic Information Systems</a></li>
+  <li><a href="#geographic-information-systems" id="toc-geographic-information-systems" class="nav-link" data-scroll-target="#geographic-information-systems">Geographic Information Systems</a>
+  <ul class="collapse">
+  <li><a href="#awmc-map-tiles" id="toc-awmc-map-tiles" class="nav-link" data-scroll-target="#awmc-map-tiles">AWMC Map tiles</a></li>
+  </ul></li>
   <li><a href="#print-maps" id="toc-print-maps" class="nav-link" data-scroll-target="#print-maps">Print Maps</a></li>
   </ul>
 </nav>
@@ -157,6 +167,28 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="publication" class="level2">
+<h2 class="anchored" data-anchor-id="publication">Publication</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<section id="mostern-ruth.-the-yellow-river-a-natural-and-unnatural-history" class="level3 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<h3 class="anchored" data-anchor-id="mostern-ruth.-the-yellow-river-a-natural-and-unnatural-history"><a href="https://yalebooks.yale.edu/book/9780300238334/the-yellow-river/">Mostern, Ruth. The Yellow River: A Natural and Unnatural History</a></h3>
+<p>I built the database, information system, and constructed the infographics, charts, and maps for Ruth Mostern’s monograph, which was the Winner of the 2022 Joseph Levenson Prize (China, Pre-1900), sponsored by the Association for Asian Studies.<br>
+<img src="images/yr.png" class="img-fluid" alt="Book Cover"></p>
+</section>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="images/mosternfig4_orig.png" class="img-fluid"><br>
+<img src="images/mosternfig5b_orig.png" class="img-fluid"><br>
+<img src="images/4_6.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<section id="aeolian-alexanders" class="level3">
+<h3 class="anchored" data-anchor-id="aeolian-alexanders"><a href="https://rmhorne.github.io/aeolian-alexanders.github.io/">Aeolian Alexanders</a></h3>
+<p><img src="images/aeolian-coin-header.png" class="img-fluid" alt="Aeolian Image"><br>
+Aeolian Alexanders, a NEH-Mellon funded digital publication project, combines social network analysis, historical geographic information systems, digital humanities, linked data, and numismatics. You can <a href="https://rmhorne.github.io/aeolian-alexanders.github.io/">read the digital publication</a> or <a href="https://github.com/Aeolian-Alexanders">go to the github site</a> to see the code.</p>
+</section>
+</section>
 <section id="digital-gazetteers" class="level2">
 <h2 class="anchored" data-anchor-id="digital-gazetteers">Digital Gazetteers</h2>
 <div class="quarto-layout-panel">
@@ -168,8 +200,8 @@ I am an editor for the <a href="http://pleiades.stoa.org/">Pleiades Project,</a>
 </section>
 <section id="big-ancient-mediterranean-bam" class="level3 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <h3 class="anchored" data-anchor-id="big-ancient-mediterranean-bam"><a href="https://bigancientmediterranean.wordpress.com/">Big Ancient Mediterranean (BAM)</a></h3>
-<p><img src="https://ryanmatthewhorne.files.wordpress.com/2014/12/screen-shot-2014-12-19-at-1-16-41-am.png?w=300" class="img-fluid" alt="Screen Shot 2014-12-19 at 1.16.41 AM"><br>
-BAM is an open-access project that integrates GIS tools, network analysis, and textual annotation/data mining capabilities in order to allow the exploration and visualization of ancient texts in new ways. BAM provides a modular framework which can be utilized by any number of different projects, and I have used the codebase to construct projects covering subjects ranging from the ancient world to today. I am also using BAM to explore methods to visualize and display data that is a mix of&nbsp;locatable and non-locatable entities. You can find a <a href="http://awmc.unc.edu/awmc/applications/bam-test/stable-test.html">demo here</a>. You can download the code here:&nbsp;<a href="https://github.com/Big-Ancient-Mediterranean/BAM">https://github.com/Big-Ancient-Mediterranean/BAM</a>.</p>
+<p><img src="images/BAM-icon.svg" class="img-fluid" alt="Icon"><br>
+BAM is an open-access project that integrates GIS tools, network analysis, and textual annotation/data mining capabilities in order to allow the exploration and visualization of ancient texts in new ways. BAM provides a modular framework which can be utilized by any number of different projects, and I have used the codebase to construct projects covering subjects ranging from the ancient world to today. I am also using BAM to explore methods to visualize and display data that is a mix of&nbsp;locatable and non-locatable entities. You can download the code here:&nbsp;<a href="https://github.com/Big-Ancient-Mediterranean/BAM">https://github.com/Big-Ancient-Mediterranean/BAM</a>.</p>
 </section>
 </div>
 </div>
@@ -180,18 +212,32 @@ BAM is an open-access project that integrates GIS tools, network analysis, and t
 <div class="quarto-layout-row quarto-layout-valign-top">
 <section id="the-black-lunch-table" class="level3 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <h3 class="anchored" data-anchor-id="the-black-lunch-table"><a href="https://blacklunchtable.com/">The Black Lunch Table</a></h3>
-<p><img src="https://ryanmatthewhorne.files.wordpress.com/2014/12/blt-net.png?w=600" class="img-fluid" alt="blt-net"><br>
-This is&nbsp;an interdisciplinary project that studies cultural production and critical dialogue on racial issues. Started as a collaboration between UNC professors and working artists, Black Lunch Table brings together groups of African-American artists, academics, and activists throughout the United States. These groups have set dialogue topics, and the ensuing conversation is electronically archived and will be presented on an open access website. I lead the design and development of new digital humanities methodologies and software for the project, including a combination of social network analysis and natural language processing to create innovative interfaces to catalog, search, and visualize the Black Lunch Table audio archives.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://ryanmatthewhorne.files.wordpress.com/2014/12/blt-net.png?w=600" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">blt-net</figcaption>
+</figure>
+</div>
 </section>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="images/blt-mono-bi-partite-graphs.jpg" class="img-fluid"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p>This is&nbsp;an interdisciplinary project that studies cultural production and critical dialogue on racial issues. Started as a collaboration between UNC professors and working artists, Black Lunch Table brings together groups of African-American artists, academics, and activists throughout the United States. These groups have set dialogue topics, and the ensuing conversation is electronically archived and will be presented on an open access website. I led the design and development of new digital humanities methodologies and software for the project, including a combination of social network analysis and natural language processing to create innovative interfaces to catalog, search, and visualize the Black Lunch Table audio archives.</p>
+</div>
+</div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
 <section id="unc-knowledge-networks" class="level3 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <h3 class="anchored" data-anchor-id="unc-knowledge-networks">UNC Knowledge Networks</h3>
 <p><img src="https://ryanmatthewhorne.files.wordpress.com/2014/12/iah.png?w=2048" class="img-fluid" alt="iah"> This project, developed for the&nbsp;<a href="http://iah.unc.edu/">Institute for the Arts and Humanities</a>&nbsp;at UNC Chapel Hill, identified previously unknown communities of common research interests at&nbsp;the university. It uses <a href="http://id.loc.gov/authorities/subjects">Library of Congress&nbsp;Subject Headings</a>&nbsp;to categorize common faculty research interests, and deployed the Louvain method for community detection.</p>
 </section>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
 <section id="women-of-ancient-history-woah" class="level3 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <h3 class="anchored" data-anchor-id="women-of-ancient-history-woah">Women of&nbsp;Ancient History (WOAH)</h3>
-<p><img src="images/wah.png" class="img-fluid" alt="wah"><br>
+<p><img src="initatives/my_research/academic_site/site/rmhorne/images/wah.png" class="img-fluid" alt="wah"><br>
 I created the initial functional prototype of WOAH. This project aims to provide accurate information on research interests and knowledge networks of women who study ancient history, in part to counteract the field’s prevalent gender imbalance found in academic conferences and publications. It is built on a crowd-sourced data set, and deployed the BAM software suite to highlight common research interests and the geographical distribution of women at institutes of higher education.</p>
 </section>
 </div>
@@ -203,8 +249,8 @@ I created the initial functional prototype of WOAH. This project aims to provide
 <div class="quarto-layout-row quarto-layout-valign-top">
 <section id="antiquity-à-la-carte-application" class="level3 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <h3 class="anchored" data-anchor-id="antiquity-à-la-carte-application"><a href="http://awmc.unc.edu/awmc/applications/alacarte/">Antiquity À-la-carte application</a></h3>
-<p><a href="http://awmc.unc.edu/awmc/applications/alacarte/"><img src="images/carte_main.jpg" class="img-fluid"></a><br>
-This is a&nbsp;web-based GIS interface and&nbsp;interactive digital&nbsp;atlas of the <a href="http://en.wikipedia.org/wiki/Ancient_history">ancient world</a>, featuring accurate historical, cultural, and geographical data produced by the <a href="http://awmc.unc.edu/">AWMC</a>&nbsp;in addition to the&nbsp;entire <a href="http://pleiades.stoa.org/">Pleiades Project</a> feature set. The map is completely searchable with customizable features, allowing for the creation of any map covering&nbsp;<a href="http://en.wikipedia.org/wiki/Archaic_Greece">Archaic Greece</a> to <a href="http://en.wikipedia.org/wiki/Late_Antiquity">Late Antiquity</a> and beyond. &nbsp;Click&nbsp;<a href="http://awmc.unc.edu/awmc/applications/alacarte/">here</a> or on the image above in order to launch the map application. This application works best with <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a>, <a href="https://www.google.com/intl/en/chrome/browser/">Chrome</a>, or <a href="http://www.apple.com/safari/" title="Safari">Safari</a>. The application is hosted on a custom installation of&nbsp;<a href="http://mapserver.org/">Mapserver</a>, and is built with&nbsp;<a href="http://openlayers.org/">OpenLayers</a>, <a href="http://www.geoext.org/">GeoExt</a>, and&nbsp;<a href="http://mapfish.org/">MapFish</a>, with a&nbsp;<a href="http://postgis.refractions.net/">PostGIS</a>&nbsp;backend. For the use of À-la-carte in scholarship, see Kurt A. Raaflaub and John T. Ramsey,&nbsp;<a href="http://research.ncl.ac.uk/histos/documents/2017AA01RaaflaubRamsey.pdf"><em>Reconstructing the Chronology of Caesar’s Gallic Wars</em></a>, Histos 11, April 2017.</p>
+<p><a href="http://awmc.unc.edu/awmc/applications/alacarte/"><img src="initatives/my_research/academic_site/site/rmhorne/images/carte_main.jpg" class="img-fluid"></a><br>
+This is a&nbsp;web-based GIS interface and&nbsp;interactive digital&nbsp;atlas of the <a href="http://en.wikipedia.org/wiki/Ancient_history">ancient world</a>, featuring accurate historical, cultural, and geographical data produced by the <a href="http://awmc.unc.edu/">AWMC</a>&nbsp;in addition to the&nbsp;entire <a href="http://pleiades.stoa.org/">Pleiades Project</a> feature set. The map is completely searchable with customizable features, allowing for the creation of any map covering&nbsp;<a href="http://en.wikipedia.org/wiki/Archaic_Greece">Archaic Greece</a> to <a href="http://en.wikipedia.org/wiki/Late_Antiquity">Late Antiquity</a> and beyond. &nbsp;Click&nbsp;<a href="http://awmc.unc.edu/awmc/applications/alacarte/">here</a> or on the image above in order to launch the map application. This application works best with <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a>, <a href="https://www.google.com/intl/en/chrome/browser/">Chrome</a>, or <a href="http://www.apple.com/safari/" title="Safari">Safari</a>. The application is hosted on a custom installation of&nbsp;<a href="http://mapserver.org/">Mapserver</a>, and is built with&nbsp;<a href="http://openlayers.org/">OpenLayers</a>, <a href="http://www.geoext.org/">GeoExt</a>, and&nbsp;<a href="http://mapfish.org/">MapFish</a>, with a&nbsp;<a href="http://postgis.refractions.net/">PostGIS</a>&nbsp;backend. For a sample use of À-la-carte in scholarship, see Kurt A. Raaflaub and John T. Ramsey,&nbsp;<a href="http://research.ncl.ac.uk/histos/documents/2017AA01RaaflaubRamsey.pdf"><em>Reconstructing the Chronology of Caesar’s Gallic Wars</em></a>, Histos 11, April 2017.</p>
 </section>
 <section id="social-networks-and-greek-garrisons" class="level3 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <h3 class="anchored" data-anchor-id="social-networks-and-greek-garrisons"><a href="http://awmc.unc.edu/awmc/applications/snagg/">Social Networks and Greek Garrisons</a></h3>
@@ -243,7 +289,7 @@ The Center’s single, interactive web map follows the text of Hierokles, Synekd
 <div class="quarto-layout-row quarto-layout-valign-top">
 <section id="awmc-map-tiles" class="level3 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <h3 class="anchored" data-anchor-id="awmc-map-tiles"><a href="http://awmc.unc.edu/wordpress/tiles/">AWMC Map tiles</a></h3>
-<p><a href="http://awmc.unc.edu/wordpress/tiles/"><img src="images/Screen-Shot-2014-02-02-at-10.07.32-PM-1024x632.png" class="img-fluid" alt="All Layers"></a><br>
+<p><a href="http://awmc.unc.edu/wordpress/tiles/"><img src="initatives/my_research/academic_site/site/rmhorne/images/Screen-Shot-2014-02-02-at-10.07.32-PM-1024x632.png" class="img-fluid" alt="All Layers"></a><br>
 Offering the first (and at the time of this writing, only) geographically accurate base map of the ancient world, the AWMC tiles conform to the broad periodization presented in the&nbsp;<em><a href="http://www.worldcat.org/oclc/43970336">Barrington Atlas</a></em>, with different selectable water levels for the <a href="http://en.wikipedia.org/wiki/Archaic_Greece">Archaic</a>, <a href="http://en.wikipedia.org/wiki/Classical_Greece">Classical</a>, <a href="http://en.wikipedia.org/wiki/Hellenistic_period">Hellenistic</a>, <a href="http://en.wikipedia.org/wiki/Roman_Empire">Roman</a>, and <a href="http://en.wikipedia.org/wiki/Late_Antiquity">Late Antique</a>&nbsp;Periods.&nbsp;In addition, we also model inland water, rivers, and other geographical features as they appeared in antiquity.&nbsp;The base tiles are culturally agnostic, allowing them to be used to represent the physical environment of nearly any ancient society in the <a href="http://pleiades.stoa.org/places/1043">Mediterranean</a> world.<br>
 These tiles are used by&nbsp;<a href="http://pleiades.stoa.org/">Pleiades</a>, <a href="http://darmc.harvard.edu/icb/icb.do">Harvard’s Digital Atlas of Roman and Medieval Civilizations</a>, <a href="http://orbis.stanford.edu/">Stanford’s ORBIS application</a>, and the <a href="http://www.isma.cnr.it/">Istituto di Studi sul Mediterraneo Antico</a>, amongst others.</p>
 </section>
@@ -255,14 +301,14 @@ These tiles are used by&nbsp;<a href="http://pleiades.stoa.org/">Pleiades</a>, <
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="http://awmc.unc.edu/wordpress/wp-content/uploads/2014/12/hispania_image.png"><img src="images/hispania_image.png" class="img-fluid" alt="hispania_image"></a><a href="http://pleiades.stoa.org/places/1027">Hispania</a> in the Second Century C.E**: At 1:750,000, scale and measuring&nbsp;58.5 inches tall by 68 inches (149 by 173 cm), this map is a new addition to the AWMC’s class map series, and it will be offered as a stand-alone product. More information is available from the <a href="http://awmc.unc.edu/wordpress/wp-content/uploads/2014/12/aia_final.pdf">flier linked here</a>. A Draft Map was&nbsp;displayed at the Poster Session of the <a href="http://www.archaeological.org/annualmeeting">AIA New Orleans meeting</a>, Friday 9 January 2015, 10:45 am to 3: 00 pm.</p>
+<p><a href="http://awmc.unc.edu/wordpress/wp-content/uploads/2014/12/hispania_image.png"><img src="initatives/my_research/academic_site/site/rmhorne/images/hispania_image.png" class="img-fluid" alt="hispania_image"></a><a href="http://pleiades.stoa.org/places/1027">Hispania</a> in the Second Century C.E**: At 1:750,000, scale and measuring&nbsp;58.5 inches tall by 68 inches (149 by 173 cm), this map is a new addition to the AWMC’s class map series, and it will be offered as a stand-alone product. More information is available from the <a href="http://awmc.unc.edu/wordpress/wp-content/uploads/2014/12/aia_final.pdf">flier linked here</a>. A Draft Map was&nbsp;displayed at the Poster Session of the <a href="http://www.archaeological.org/annualmeeting">AIA New Orleans meeting</a>, Friday 9 January 2015, 10:45 am to 3: 00 pm.</p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="https://ryanmatthewhorne.files.wordpress.com/2017/02/asiaminorwebthumb.jpg?w=600" class="img-fluid" alt="asiaminorwebthumb"><a href="https://pleiades.stoa.org/places/837">Asia Minor</a> in the Second Century C.E**.: Like the map of Hispania, this map is produced at 1:750,000 scale, and is offered as&nbsp;a <a href="http://awmc.unc.edu/wordpress/blog/2017/02/22/wall-map-now-available-asia-minor-in-the-second-century-c-e/">free download through the AWMC website</a>. As a collaborative work, this map represents the current state of knowledge concerning Roman Anatolia, and was took several years to produce at the center. A&nbsp;draft of the map was presented by Richard Talbert at the ‘Roads and Routes in Anatolia’ conference organized by the British Institute at Ankara in March 2014.</p>
 </div>
 </div>
 </div>
-<p><a href="http://awmc.unc.edu/awmc/applications/benthos/"><img src="images/Screen-Shot-2013-02-14-at-4.54.51-PM-1024x557.png" class="img-fluid" alt="Screen Shot 2013-02-14 at 4.54.51 PM"></a><strong><a href="http://awmc.unc.edu/wordpress/benthos/">Benthos</a>:</strong> &nbsp;Currently in the Alpha stage, <a href="http://awmc.unc.edu/wordpress/benthos/">Benthos</a> is a project of the <a href="http://awmc.unc.edu/">Ancient World Mapping Center</a>&nbsp;that aims to catalog and map the waters of the ancient Mediterranean basin, including both physical and cultural geography. The project will provide interactive maps of&nbsp;<a href="http://pleiades.stoa.org/places/1043">Mediterranean</a>&nbsp;shipping networks, <a href="http://en.wikipedia.org/wiki/Bathymetric">bathymetric</a> data, and views of ancient coastlines. Currently the project is in a preliminary state, with a functional&nbsp;<a href="http://en.wikipedia.org/wiki/Software_release_life_cycle">alpha version</a> of the application based off of <a href="http://awmc.unc.edu/wordpress/alacarte/">Antiquity À-la-carte</a>.</p>
+<p><a href="http://awmc.unc.edu/awmc/applications/benthos/"><img src="initatives/my_research/academic_site/site/rmhorne/images/Screen-Shot-2013-02-14-at-4.54.51-PM-1024x557.png" class="img-fluid" alt="Screen Shot 2013-02-14 at 4.54.51 PM"></a><strong><a href="http://awmc.unc.edu/wordpress/benthos/">Benthos</a>:</strong> &nbsp;Currently in the Alpha stage, <a href="http://awmc.unc.edu/wordpress/benthos/">Benthos</a> is a project of the <a href="http://awmc.unc.edu/">Ancient World Mapping Center</a>&nbsp;that aims to catalog and map the waters of the ancient Mediterranean basin, including both physical and cultural geography. The project will provide interactive maps of&nbsp;<a href="http://pleiades.stoa.org/places/1043">Mediterranean</a>&nbsp;shipping networks, <a href="http://en.wikipedia.org/wiki/Bathymetric">bathymetric</a> data, and views of ancient coastlines. Currently the project is in a preliminary state, with a functional&nbsp;<a href="http://en.wikipedia.org/wiki/Software_release_life_cycle">alpha version</a> of the application based off of <a href="http://awmc.unc.edu/wordpress/alacarte/">Antiquity À-la-carte</a>.</p>
 <p>Click&nbsp;<a href="http://awmc.unc.edu/awmc/applications/benthos/">here</a> or on the image above in order to launch the map application. This application works best with&nbsp;<a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a>,&nbsp;<a href="https://www.google.com/intl/en/chrome/browser/">Chrome</a>, or&nbsp;<a href="http://www.apple.com/safari/" title="Safari">Safari</a>.</p>
 <hr>
 <p><strong><a href="http://pleiades.stoa.org/">Pleiades Project</a></strong>: Although I do not work with the code of the site,&nbsp;I am a <a href="http://pleiades.stoa.org/news/blog/ryan-horne-assumes-co-managing-editor-role">co-managing editor</a></p>
@@ -299,9 +345,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -366,6 +426,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

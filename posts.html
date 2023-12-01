@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -57,7 +57,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -90,6 +91,7 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
@@ -106,48 +108,50 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Ryan M Horne</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html">
- <span class="menu-text">Ryan Horne CV</span></a>
+    <a class="nav-link" href="./cv.html" rel="" target="">
+ <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page">
+    <a class="nav-link active" href="./posts.html" rel="" target="" aria-current="page">
  <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./digital-portfolio.html">
+    <a class="nav-link" href="./digital-portfolio.html" rel="" target="">
  <span class="menu-text">Digital Portfolio</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/rmhorne"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/rmhorne" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://orcid.org/0000-0002-5009-3116">
+    <a class="nav-link" href="https://orcid.org/0000-0002-5009-3116" rel="" target="">
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://hcommons.social/web/@rmhorne"><i class="bi bi-mastodon" role="img">
+    <a class="nav-link" href="https://hcommons.social/web/@rmhorne" rel="" target=""><i class="bi bi-mastodon" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/RyanMHorne"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/RyanMHorne" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -185,9 +189,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1591081200000" data-listing-file-modified-sort="1667592122262" data-listing-reading-time-sort="0.605">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1591081200000" data-listing-file-modified-sort="1667592122262" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<p><a href="./posts/aeolian-alexanders-launches.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2020/06/site_annoucement.png?w=1024" class="thumnail-image"> </a></p>
+<p><a href="./posts/aeolian-alexanders-launches.html"> <p class="card-img-top"><img src="https://ryanmatthewhorne.files.wordpress.com/2020/06/site_annoucement.png?w=1024"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/aeolian-alexanders-launches.html">
@@ -210,13 +214,9 @@ Jun 2, 2020
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="information,maps,social-networks" data-listing-date-sort="1556262000000" data-listing-file-modified-sort="1667592122237" data-listing-reading-time-sort="1.705">
+<div class="quarto-post image-right" data-index="1" data-categories="information,maps,social-networks" data-listing-date-sort="1556262000000" data-listing-file-modified-sort="1667592122237" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
-<a href="./posts/talk-at-ucsb-on-may-20th-mediterranean-pathways-gis-network-analysis-and-the-ancient-world.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/talk-at-ucsb-on-may-20th-mediterranean-pathways-gis-network-analysis-and-the-ancient-world.html"></a></p>
+<p><a href="./posts/talk-at-ucsb-on-may-20th-mediterranean-pathways-gis-network-analysis-and-the-ancient-world.html"> <p class="card-img-top"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/talk-at-ucsb-on-may-20th-mediterranean-pathways-gis-network-analysis-and-the-ancient-world.html">
@@ -252,9 +252,9 @@ Apr 26, 2019
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1541923200000" data-listing-file-modified-sort="1667592122213" data-listing-reading-time-sort="7.595">
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1541923200000" data-listing-file-modified-sort="1701461422834" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
 <div class="thumbnail">
-<p><a href="./posts/what-do-you-do-with-36409-places-and-6506-connections-some-cartographic-representations-of-pleiades-data.html"> <img src="./posts/images/overview.png" class="thumnail-image"> </a></p>
+<p><a href="./posts/what-do-you-do-with-36409-places-and-6506-connections-some-cartographic-representations-of-pleiades-data.html"> <p class="card-img-top"><img src="posts/initatives/my_research/academic_site/site/rmhorne/posts/images/overview.png" alt="images/overview.png"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/what-do-you-do-with-36409-places-and-6506-connections-some-cartographic-representations-of-pleiades-data.html">
@@ -277,13 +277,9 @@ Nov 11, 2018
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1531983600000" data-listing-file-modified-sort="1667592122188" data-listing-reading-time-sort="0.88">
+<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1531983600000" data-listing-file-modified-sort="1667592122188" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<a href="./posts/ancient-itineraries-the-digital-lives-of-art-history.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/ancient-itineraries-the-digital-lives-of-art-history.html"></a></p>
+<p><a href="./posts/ancient-itineraries-the-digital-lives-of-art-history.html"> <p class="card-img-top"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/ancient-itineraries-the-digital-lives-of-art-history.html">
@@ -306,9 +302,9 @@ Jul 19, 2018
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1513756800000" data-listing-file-modified-sort="1667592122162" data-listing-reading-time-sort="0.225">
+<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1513756800000" data-listing-file-modified-sort="1680221811796" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<p><a href="./posts/neh-mellon-fellowship-for-digital-publication-2017.html"> <img src="./posts/images/neh_logo_horizontal_2c_c_outl_0.png" class="thumnail-image"> </a></p>
+<p><a href="./posts/neh-mellon-fellowship-for-digital-publication-2017.html"> <p class="card-img-top"><img src="posts/initatives/my_research/academic_site/site/rmhorne/posts/images/neh_logo_horizontal_2c_c_outl_0.png"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/neh-mellon-fellowship-for-digital-publication-2017.html">
@@ -331,13 +327,9 @@ Dec 20, 2017
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1493190000000" data-listing-file-modified-sort="1667592122138" data-listing-reading-time-sort="1.5">
+<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1493190000000" data-listing-file-modified-sort="1667592122138" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
-<a href="./posts/sna-wikipedia-and-the-hellenistic-world.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/sna-wikipedia-and-the-hellenistic-world.html"></a></p>
+<p><a href="./posts/sna-wikipedia-and-the-hellenistic-world.html"> <p class="card-img-top"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/sna-wikipedia-and-the-hellenistic-world.html">
@@ -360,13 +352,9 @@ Apr 26, 2017
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="maps" data-listing-date-sort="1488096000000" data-listing-file-modified-sort="1667592122112" data-listing-reading-time-sort="0.97">
+<div class="quarto-post image-right" data-index="6" data-categories="maps" data-listing-date-sort="1488096000000" data-listing-file-modified-sort="1667592122112" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<a href="./posts/asia-minor-in-the-second-century-ce-a-new-wall-map-from-the-awmc.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/asia-minor-in-the-second-century-ce-a-new-wall-map-from-the-awmc.html"></a></p>
+<p><a href="./posts/asia-minor-in-the-second-century-ce-a-new-wall-map-from-the-awmc.html"> <p class="card-img-top"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/asia-minor-in-the-second-century-ce-a-new-wall-map-from-the-awmc.html">
@@ -396,9 +384,9 @@ Feb 26, 2017
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="social-networks" data-listing-date-sort="1479024000000" data-listing-file-modified-sort="1667592122087" data-listing-reading-time-sort="3.875">
+<div class="quarto-post image-right" data-index="7" data-categories="social-networks" data-listing-date-sort="1479024000000" data-listing-file-modified-sort="1680221811908" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <div class="thumbnail">
-<p><a href="./posts/reporthate-whywereafraid-and-sna.html"> <img src="./posts/images/maincomp.png" class="thumnail-image"> </a></p>
+<p><a href="./posts/reporthate-whywereafraid-and-sna.html"> <p class="card-img-top"><img src="posts/initatives/my_research/academic_site/site/rmhorne/posts/images/maincomp.png" alt="maincomp"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/reporthate-whywereafraid-and-sna.html">
@@ -428,9 +416,9 @@ Nov 13, 2016
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="maps,social-networks" data-listing-date-sort="1478415600000" data-listing-file-modified-sort="1667592122062" data-listing-reading-time-sort="17.645">
+<div class="quarto-post image-right" data-index="8" data-categories="maps,social-networks" data-listing-date-sort="1478415600000" data-listing-file-modified-sort="1680221811817" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18">
 <div class="thumbnail">
-<p><a href="./posts/nodapl-twitter-analysis.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2016/11/dapl_routes_map_large.png?w=2048" class="thumnail-image"> </a></p>
+<p><a href="./posts/nodapl-twitter-analysis.html"> <p class="card-img-top"><img src="https://ryanmatthewhorne.files.wordpress.com/2016/11/dapl_routes_map_large.png?w=2048" alt="dapl_routes_map_large"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/nodapl-twitter-analysis.html">
@@ -463,13 +451,9 @@ Nov 6, 2016
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="social-networks" data-listing-date-sort="1474959600000" data-listing-file-modified-sort="1667592122037" data-listing-reading-time-sort="4.69">
+<div class="quarto-post image-right" data-index="9" data-categories="social-networks" data-listing-date-sort="1474959600000" data-listing-file-modified-sort="1667592122037" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <div class="thumbnail">
-<a href="./posts/gephi-conspiracies-and-sna-in-the-classroom-midterm-thoughts.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/gephi-conspiracies-and-sna-in-the-classroom-midterm-thoughts.html"></a></p>
+<p><a href="./posts/gephi-conspiracies-and-sna-in-the-classroom-midterm-thoughts.html"> <p class="card-img-top"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/gephi-conspiracies-and-sna-in-the-classroom-midterm-thoughts.html">
@@ -499,9 +483,9 @@ Sep 27, 2016
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="bam" data-listing-date-sort="1465455600000" data-listing-file-modified-sort="1667592122012" data-listing-reading-time-sort="6.485">
+<div class="quarto-post image-right" data-index="10" data-categories="bam" data-listing-date-sort="1465455600000" data-listing-file-modified-sort="1667592122012" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
 <div class="thumbnail">
-<p><a href="./posts/reflections-on-the-bam-conference.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2016/06/bam2016_final.jpg?w=464" class="thumnail-image"> </a></p>
+<p><a href="./posts/reflections-on-the-bam-conference.html"> <p class="card-img-top"><img src="https://ryanmatthewhorne.files.wordpress.com/2016/06/bam2016_final.jpg?w=464" alt="BAM2016_Final"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/reflections-on-the-bam-conference.html">
@@ -531,9 +515,9 @@ Jun 9, 2016
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="code,maps,social-networks" data-listing-date-sort="1447228800000" data-listing-file-modified-sort="1667592121987" data-listing-reading-time-sort="8.14">
+<div class="quarto-post image-right" data-index="11" data-categories="code,maps,social-networks" data-listing-date-sort="1447228800000" data-listing-file-modified-sort="1667592121987" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
 <div class="thumbnail">
-<p><a href="./posts/2-of-n-gephi-d3-js-and-maps-success.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2015/11/gephileafletd3js.png?w=300" class="thumnail-image"> </a></p>
+<p><a href="./posts/2-of-n-gephi-d3-js-and-maps-success.html"> <p class="card-img-top"><img src="https://ryanmatthewhorne.files.wordpress.com/2015/11/gephileafletd3js.png?w=300" alt="gephileafletd3js"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/2-of-n-gephi-d3-js-and-maps-success.html">
@@ -569,9 +553,9 @@ Nov 11, 2015
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="bam,code,social-networks" data-listing-date-sort="1446883200000" data-listing-file-modified-sort="1667592121962" data-listing-reading-time-sort="3.825">
+<div class="quarto-post image-right" data-index="12" data-categories="bam,code,social-networks" data-listing-date-sort="1446883200000" data-listing-file-modified-sort="1667592121962" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <div class="thumbnail">
-<p><a href="./posts/1-of-n-gephi-d3-js-and-maps.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2015/10/geo-attempr.png?w=150" class="thumnail-image"> </a></p>
+<p><a href="./posts/1-of-n-gephi-d3-js-and-maps.html"> <p class="card-img-top"><img src="https://ryanmatthewhorne.files.wordpress.com/2015/10/geo-attempr.png?w=150" alt="geo-attempr"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/1-of-n-gephi-d3-js-and-maps.html">
@@ -607,9 +591,9 @@ Nov 7, 2015
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="code,social-networks" data-listing-date-sort="1446274800000" data-listing-file-modified-sort="1667592121912" data-listing-reading-time-sort="2.42">
+<div class="quarto-post image-right" data-index="13" data-categories="code,social-networks" data-listing-date-sort="1446274800000" data-listing-file-modified-sort="1667592121912" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <div class="thumbnail">
-<p><a href="./posts/quick-and-dirty-footnotes-for-gephi-sigmajs.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2015/09/screen-shot-2015-09-26-at-9-51-26-pm.png?w=300" class="thumnail-image"> </a></p>
+<p><a href="./posts/quick-and-dirty-footnotes-for-gephi-sigmajs.html"> <p class="card-img-top"><img src="https://ryanmatthewhorne.files.wordpress.com/2015/09/screen-shot-2015-09-26-at-9-51-26-pm.png?w=300" alt="export-text"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/quick-and-dirty-footnotes-for-gephi-sigmajs.html">
@@ -642,9 +626,9 @@ Oct 31, 2015
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="maps,social-networks" data-listing-date-sort="1444201200000" data-listing-file-modified-sort="1667592121937" data-listing-reading-time-sort="6.33">
+<div class="quarto-post image-right" data-index="14" data-categories="maps,social-networks" data-listing-date-sort="1444201200000" data-listing-file-modified-sort="1667592121937" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
 <div class="thumbnail">
-<p><a href="./posts/networks-geography-and-gephi-lots-of-promise-but-lots-of-work-to-be-done.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2015/10/screen-shot-2015-10-07-at-1-40-46-pm.png?w=300" class="thumnail-image"> </a></p>
+<p><a href="./posts/networks-geography-and-gephi-lots-of-promise-but-lots-of-work-to-be-done.html"> <p class="card-img-top"><img src="https://ryanmatthewhorne.files.wordpress.com/2015/10/screen-shot-2015-10-07-at-1-40-46-pm.png?w=300" alt="Screen Shot 2015-10-07 at 1.40.46 PM"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/networks-geography-and-gephi-lots-of-promise-but-lots-of-work-to-be-done.html">
@@ -677,9 +661,9 @@ Oct 7, 2015
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="bam,code" data-listing-date-sort="1443423600000" data-listing-file-modified-sort="1667592121886" data-listing-reading-time-sort="7.595">
+<div class="quarto-post image-right" data-index="15" data-categories="bam,code" data-listing-date-sort="1443423600000" data-listing-file-modified-sort="1667592121886" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
 <div class="thumbnail">
-<p><a href="./posts/code-for-bam-part-1-of-n-gephi-and-maps.html"> <img src="https://ryanmatthewhorne.files.wordpress.com/2015/09/tbib-select.png?w=300" class="thumnail-image"> </a></p>
+<p><a href="./posts/code-for-bam-part-1-of-n-gephi-and-maps.html"> <p class="card-img-top"><img src="https://ryanmatthewhorne.files.wordpress.com/2015/09/tbib-select.png?w=300" alt="TBib-select"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="./posts/code-for-bam-part-1-of-n-gephi-and-maps.html">
@@ -744,9 +728,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -811,6 +809,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
