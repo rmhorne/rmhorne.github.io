@@ -1,0 +1,12 @@
+---
+title: "Rmhorne"
+bibliography: references.bib
+---
+
+# Byzantine Digital Stuff
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+Some fact @horne2019
