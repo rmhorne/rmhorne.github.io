@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Ryan M Horne</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./images/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Ryan M Horne</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./cv.html" aria-current="page"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./posts.html"> 
+<span class="menu-text">Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./digital-portfolio.html"> 
+<span class="menu-text">Digital Portfolio</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/rmhorne"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://orcid.org/0000-0002-5009-3116"> 
+<span class="menu-text"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="vertical-align: middle;"> ORCID</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://bsky.app/profile/rmhorne.bsky.social"> 
+<span class="menu-text"><img src="images/Bluesky_logo.svg" style="height: 16px; vertical-align: middle;"> Bluesky</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/RyanMHorne"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#cv" id="toc-cv" class="nav-link active" data-scroll-target="#cv">CV</a>
+  <ul class="collapse">
+  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
+  <li><a href="#professional-experience" id="toc-professional-experience" class="nav-link" data-scroll-target="#professional-experience">Professional Experience</a></li>
+  <li><a href="#publications" id="toc-publications" class="nav-link" data-scroll-target="#publications">Publications</a>
+  <ul class="collapse">
+  <li><a href="#monographs" id="toc-monographs" class="nav-link" data-scroll-target="#monographs">Monographs</a></li>
+  <li><a href="#editor" id="toc-editor" class="nav-link" data-scroll-target="#editor">Editor</a></li>
+  <li><a href="#book-chapters" id="toc-book-chapters" class="nav-link" data-scroll-target="#book-chapters">Book Chapters</a></li>
+  <li><a href="#articles" id="toc-articles" class="nav-link" data-scroll-target="#articles">Articles</a></li>
+  <li><a href="#digital-publications-and-projects" id="toc-digital-publications-and-projects" class="nav-link" data-scroll-target="#digital-publications-and-projects">Digital Publications and Projects</a></li>
+  </ul></li>
+  <li><a href="#conferences-and-talks" id="toc-conferences-and-talks" class="nav-link" data-scroll-target="#conferences-and-talks">Conferences and Talks</a>
+  <ul class="collapse">
+  <li><a href="#invited-papers" id="toc-invited-papers" class="nav-link" data-scroll-target="#invited-papers">Invited Papers</a></li>
+  <li><a href="#papers" id="toc-papers" class="nav-link" data-scroll-target="#papers">Papers</a></li>
+  <li><a href="#roundtables-workshops" id="toc-roundtables-workshops" class="nav-link" data-scroll-target="#roundtables-workshops">Roundtables / Workshops</a></li>
+  <li><a href="#posters" id="toc-posters" class="nav-link" data-scroll-target="#posters">Posters</a></li>
+  <li><a href="#organization" id="toc-organization" class="nav-link" data-scroll-target="#organization">Organization</a></li>
+  <li><a href="#talks" id="toc-talks" class="nav-link" data-scroll-target="#talks">Talks</a></li>
+  <li><a href="#campus-talks" id="toc-campus-talks" class="nav-link" data-scroll-target="#campus-talks">Campus Talks</a></li>
+  <li><a href="#campus-workshops" id="toc-campus-workshops" class="nav-link" data-scroll-target="#campus-workshops">Campus Workshops</a></li>
+  </ul></li>
+  <li><a href="#grants-fellowships-and-awards" id="toc-grants-fellowships-and-awards" class="nav-link" data-scroll-target="#grants-fellowships-and-awards">Grants, Fellowships, and Awards</a></li>
+  <li><a href="#teaching-experience" id="toc-teaching-experience" class="nav-link" data-scroll-target="#teaching-experience">Teaching Experience</a>
+  <ul class="collapse">
+  <li><a href="#university-of-california-los-angeles-instructor-of-record" id="toc-university-of-california-los-angeles-instructor-of-record" class="nav-link" data-scroll-target="#university-of-california-los-angeles-instructor-of-record">University of California, Los Angeles, Instructor of Record</a></li>
+  <li><a href="#university-of-pittsburgh-instructor-of-record" id="toc-university-of-pittsburgh-instructor-of-record" class="nav-link" data-scroll-target="#university-of-pittsburgh-instructor-of-record">University of Pittsburgh, Instructor of Record</a></li>
+  <li><a href="#university-of-north-carolina-chapel-hill-instructor-of-record" id="toc-university-of-north-carolina-chapel-hill-instructor-of-record" class="nav-link" data-scroll-target="#university-of-north-carolina-chapel-hill-instructor-of-record">University of North Carolina, Chapel Hill, Instructor of Record</a></li>
+  <li><a href="#university-of-north-carolina-chapel-hill-teaching-assistant" id="toc-university-of-north-carolina-chapel-hill-teaching-assistant" class="nav-link" data-scroll-target="#university-of-north-carolina-chapel-hill-teaching-assistant">University of North Carolina, Chapel Hill, Teaching Assistant</a></li>
+  <li><a href="#university-of-california-santa-barbara-teaching-assistant" id="toc-university-of-california-santa-barbara-teaching-assistant" class="nav-link" data-scroll-target="#university-of-california-santa-barbara-teaching-assistant">University of California, Santa Barbara, Teaching Assistant</a></li>
+  </ul></li>
+  <li><a href="#software-competencies" id="toc-software-competencies" class="nav-link" data-scroll-target="#software-competencies">Software Competencies</a></li>
+  <li><a href="#professional-service" id="toc-professional-service" class="nav-link" data-scroll-target="#professional-service">Professional Service</a>
+  <ul class="collapse">
+  <li><a href="#committee-memberships" id="toc-committee-memberships" class="nav-link" data-scroll-target="#committee-memberships">Committee Memberships</a></li>
+  <li><a href="#board-memberships" id="toc-board-memberships" class="nav-link" data-scroll-target="#board-memberships">Board Memberships</a></li>
+  <li><a href="#peer-review" id="toc-peer-review" class="nav-link" data-scroll-target="#peer-review">Peer Review</a></li>
+  <li><a href="#other" id="toc-other" class="nav-link" data-scroll-target="#other">Other</a></li>
+  </ul></li>
+  <li><a href="#professional-development" id="toc-professional-development" class="nav-link" data-scroll-target="#professional-development">Professional Development</a></li>
+  <li><a href="#languages" id="toc-languages" class="nav-link" data-scroll-target="#languages">Languages</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="cv" class="level1">
+<h1>CV</h1>
+<section id="education" class="level2">
+<h2 class="anchored" data-anchor-id="education">Education</h2>
+<p>August, 2015: Ph.D., History, University of North Carolina, Chapel Hill</p>
+<p>May, 2010: M.A., History, University of California, Santa Barbara</p>
+<p>May, 2005: B.A. / B.S., Dual major in History and Information Sciences and Technology, Pennsylvania State University</p>
+</section>
+<section id="professional-experience" class="level2">
+<h2 class="anchored" data-anchor-id="professional-experience">Professional Experience</h2>
+<p>2022 - present: Digital Research Specialist, Office of Advanced Research Computing, University of California, Los Angeles</p>
+<p>2021 - 2022: Digital Humanities Research Facilitator, Research Data Services, University of California, Santa Barbara Library</p>
+<p>2020 - 2021: Sinai Manuscripts Digital Library Data/Metadata Coordinator, Digital Library Program, University of California, Los Angeles Digital Library Program</p>
+<p>2019 - 2020: Research Associate, World History Center, History Department, University of Pittsburgh</p>
+<p>2017 - 2019: Post-Doctoral Fellow, World History Center, History Department, University of Pittsburgh</p>
+<p>2015 - 2017: Post-Doctoral Fellow, the Carolina Digital Humanities Initiative, History Department, and the Institute for the Arts and Humanities, University of North Carolina, Chapel Hill</p>
+<p>2014 - 2015: Director, Ancient World Mapping Center, History Department, University of North Carolina, Chapel Hill</p>
+<p>2010 - 2014: Digital Director, Ancient World Mapping Center, History Department, University of North Carolina, Chapel Hill</p>
+<p>2008 - 2010: Teaching Assistant, University of California, Santa Barbara</p>
+<p>2005 - 2007: Software Engineer Associate, Lockheed Martin, Owego, NY<br>
+(Developed optical character recognition software and web resources)</p>
+</section>
+<section id="publications" class="level2">
+<h2 class="anchored" data-anchor-id="publications">Publications</h2>
+<section id="monographs" class="level3">
+<h3 class="anchored" data-anchor-id="monographs">Monographs</h3>
+<p>2020: <em>Aeolian Alexanders: Economic, Material, and Social Networks in Antiquity</em> Electronic publication supported by a NEH-Mellon Fellowship for Digital Publication. <a href="https://github.com/Aeolian-Alexanders">https://github.com/Aeolian-Alexanders</a></p>
+</section>
+<section id="editor" class="level3">
+<h3 class="anchored" data-anchor-id="editor">Editor</h3>
+<p>2021: Bond, Sarah, Paul Dilley, and Ryan Horne (eds). <em>Linked Open Data for the Ancient Mediterranean: Structures, Practices, Prospects.</em> ISAW Papers 20. <a href="http://dlib.nyu.edu/awdl/isaw/isaw-papers/20/">http://dlib.nyu.edu/awdl/isaw/isaw-papers/20/</a></p>
+</section>
+<section id="book-chapters" class="level3">
+<h3 class="anchored" data-anchor-id="book-chapters">Book Chapters</h3>
+<p>2022: Horne, Ryan and Ruth Mostern. “Landscapes in Motion: Cartographies of Connectivity and the Place of Physical Geography in the Environmental and Spatial Humanities” In <em>Routledge Handbook of the Digital Environmental Humanities</em>, ed.&nbsp;Luke Bergmann, Arlene Crampsie, Deborah Dixon, Steven Hartman, Robert Legg, Francis Ludlow, and Charlie Travis. Routledge. p.&nbsp;470-489</p>
+<p>2021: Digital Approaches to the ‘Big Ancient Mediterranean.’” In <em>Access and Control in Digital Humanities</em>, ed.&nbsp;Shane Hawkins. Routledge. p.&nbsp;78–95</p>
+<p>2021: Bond, Sarah, Paul Dilley, and Ryan Horne. “Introducing the Semantic Web and Linked Open Data,” in Bond, Sarah, Paul Dilley, and Ryan Horne (eds). <em>Linked Open Data for the Ancient Mediterranean: Structures, Practices, Prospects</em>. ISAW Papers 20. <a href="http://dlib.nyu.edu/awdl/isaw/isaw-papers/20-1/">http://dlib.nyu.edu/awdl/isaw/isaw-papers/20-1/</a></p>
+<p>2021: “Applying Linked Open Data Standards,” in Bond, Sarah, Paul Dilley, and Ryan Horne (eds). <em>Linked Open Data for the Ancient Mediterranean: Structures, Practices, Prospects</em>. ISAW Papers 20. <a href="http://dlib.nyu.edu/awdl/isaw/isaw-papers/20-2/">http://dlib.nyu.edu/awdl/isaw/isaw-papers/20-2/</a></p>
+<p>2021: Mostern, Ruth and Ryan Horne. “Tracking Yu: Developing a Data System for Yellow River History.” In Mostern, Ruth. <em>Yellow River: A Natural and Unnatural History</em>. Yale University Press. p.&nbsp;247–266</p>
+<p>2020: “Mapping Power: Using HGIS and Linked Open Data to Study Ancient Greek Garrison Communities,” in <em>Historical Geography, GIScience and Textual Analysis: Landscapes of Time and Place</em>, ed.&nbsp;Charles Travis, Francis Ludlow, and Ferenc Gyuris. Springer. p.&nbsp;213–227</p>
+<p>2014: “Beyond Maps as Images at the Ancient World Mapping Center.” in Elliott, Thomas, Sebastian Heath, and John Muccigrosso (eds). <em>Current Practice in Linked Open Data for the Ancient World</em>, ISAW Papers 7. <a href="http://dlib.nyu.edu/awdl/isaw/isaw-papers/7/horne/">http://dlib.nyu.edu/awdl/isaw/isaw-papers/7/horne/</a></p>
+</section>
+<section id="articles" class="level3">
+<h3 class="anchored" data-anchor-id="articles">Articles</h3>
+<p>2022: Middle, Sarah, Ryan Horne, David A. McMeekin, Chiara Zuanni, and Alex Butterworth. “Geographies of Place in Digital Art History”, <em>International Journal of Humanities and Arts Computing</em> (IJHAC) 16, no.1: 94-109.</p>
+<p>2021: “Digital Tools and Ancient Empires: Using Network Analysis and Geographic Information Systems to Study Imperial Networks in Hellenistic Anatolia.” <em>Journal of World History</em> 32, no. 2: 321–43.</p>
+<p>2020: “Beyond Lists: Digital Gazetteers and Digital History,” <em>The Historian</em>: 1–14</p>
+<p>2020: “Connecting the Dots: Rethinking Cartographies of Connectivity,” <em>PLATFORM</em>. <a href="https://www.platformspace.net/home/connecting-the-dots-rethinking-cartographies-of-connectivity">https://www.platformspace.net/home/connecting-the-dots-rethinking-cartographies-of-connectivity</a></p>
+<p>2019: “Addressing Divergent Digital Literacies and Visualizing Data Uncertainty in Social Networks and the Ancient Greek Garrisons Project.” <em>Classics@</em> 17. <a href="https://classics-at.chs.harvard.edu/classics17-horne/">https://classics-at.chs.harvard.edu/classics17-horne/</a></p>
+</section>
+<section id="digital-publications-and-projects" class="level3">
+<h3 class="anchored" data-anchor-id="digital-publications-and-projects">Digital Publications and Projects</h3>
+<p>2021: Maps and infographics in Mostern Ruth, <em>Yellow River: A Natural and Unnatural History</em> Yale University Press.</p>
+<p>2020-2022: Sinai Manuscripts Digital Library. Data and Metadata Coordinator. Site development; Data and metadata development <a href="https://sinaimanuscripts.library.ucla.edu/">https://sinaimanuscripts.library.ucla.edu/</a></p>
+<p>2019-2020: World History Gazetteer. Data modeling, database design, data coordination. https://whgazetteer.org/</p>
+<p>2017-2022: Black Lunch Table Audio Archive, Digital Director. Site and database design and development. https://blacklunchtable.com/</p>
+<p>2017: Hierokles’ Synekdemos. Ancient World Mapping Center, University of North Carolina, Chapel Hill. Site and database design and development.<br>
+http://awmc.unc.edu/awmc/applications/hierokles/</p>
+<p>2017: IAH Knowledge Network Map. Institute for the Arts and Humanities, University of North Carolina, Chapel Hill. Site and database design and development. https://iah-unc.github.io/knowledge-network/</p>
+<p>2017: with Talbert, Richard, Brian Turner, Jeffrey Becker, Ross Twele, and Gabriel Moss. Map of Asia Minor in the Second Century C.E., Ancient World Mapping Center, University of North Carolina, Chapel Hill. Cartographer and data coordinator. http://awmc.unc.edu/wordpress/blog/2017/02/22/wall-map-now-available-asia-minor-in-the-second-century-c-e/</p>
+<p>2015: with Sarah Bond and Paul Dilley. Terra Biblica and BAM Online Resources, University of Iowa. Designer and developer. http://bam.lib.uiowa.edu/</p>
+<p>2014: Strabo Digital Mapping Application in support of Roller, Duane W. 2014. Geography of Strabo: An English Translation, with Introduction and Notes. Cambridge: Cambridge University Press. Designer and developer.</p>
+<p>2014: AWMC Map Tiles A series of geographically accurate, publicly accessible map tiles of the Ancient World, which receive over 2.5 million views a year. Cartographer, designer, developer http://awmc.unc.edu/wordpress/tiles/</p>
+<p>2012-Present: Pleiades Project<br>
+A peer-reviewed, community-built gazetteer and graph of ancient places<br>
+http://pleiades.stoa.org/<br>
+See <a href="http://pleiades.stoa.org/credits">http://pleiades.stoa.org/credits</a></p>
+<p>2012: Antiquity À-la-carte A web-based GIS and interactive digital atlas of the Ancient World. <a href="http://awmc.unc.edu/wordpress/alacarte/">http://awmc.unc.edu/wordpress/alacarte/</a></p>
+<p>2011: Tabula Peutinger Map in support of Talbert, Richard J. A., Tom Elliott, Nora Harris, and Martin Steinmann. 2010. Rome’s World: The Peutinger Map Reconsidered. Cambridge: Cambridge University Press. http://peutinger.atlantides.org/map-a/</p>
+<section id="book-reviews-invited" class="level4">
+<h4 class="anchored" data-anchor-id="book-reviews-invited">Book Reviews (Invited)</h4>
+<p>2013: Review of John Lendon. Song of Wrath: The Peloponnesian War Begins. The History Teacher, Volume 46, No.&nbsp;2 (February 2013) p.&nbsp;303-304</p>
+<p>2009: Review of John Hale. Lords of the Sea: The Epic Story of the Athenian Navy and the Birth of Democracy. The History Teacher, Volume 43, No.&nbsp;1 (November 2009) p.&nbsp;146- 147</p>
+</section>
+</section>
+</section>
+<section id="conferences-and-talks" class="level2">
+<h2 class="anchored" data-anchor-id="conferences-and-talks">Conferences and Talks</h2>
+<section id="invited-papers" class="level3">
+<h3 class="anchored" data-anchor-id="invited-papers">Invited Papers</h3>
+<p>2021: “Mare Nostrum: Using Linked Open Data, Network Analysis and Historical GIS to Model Ancient Waters” in the panel Technologies and New Solutions. Roman Waters: Literature, Archaeology, and New Technologies, LMU Munich, September 16-17</p>
+<p>2020: “Mediterranean Pathways: GIS, Network Analysis, and the Ancient World” in the panel (Inter-)Regional Networks in Hellenistic Eurasia. 2020 Joint Annual Meeting of the Archaeological Institute of America and the Society for Classical Studies, Washington, DC, January 2–5</p>
+<p>2019: “HGIS, Networks, and Numismatics” in the panel Geospatial Classics: Teaching and Research Applications of G.I.S. Technology. 2019 Joint Annual Meeting of the Archaeological Institute of America and the Society for Classical Studies, San Diego, California, January 3–6</p>
+<p>2018: “Using the new Antiquity À-la-carte 2.0 to create custom maps with data from Pleiades and the Ancient World Mapping Center” in the workshop Turning Spatial with Pleiades: Creating, Teaching, and Publishing Maps in Ancient Studies, 2018 Joint Annual Meeting of the Archaeological Institute of America and the Society for Classical Studies, Boston, Massachusetts, January 4–7</p>
+<p>2017: “People, Places, and Time: Representing Entities In the Big Ancient Mediterranean Project” in Global Philology: Digital Infrastructure for Named Entities Data, Leipzig, January 11-13</p>
+<p>2017: “Make Your Own Map” in the workshop Ancient Maker Spaces: Digital Tools for Classical Scholarship, 2017 Joint Annual Meeting of the Archaeological Institute of America and the Society for Classical Studies, Toronto, January 5–8</p>
+<p>2016: “Linked Data and the The Big Ancient Mediterranean”, Workshop on Digital Humanities, Carleton University, Ottawa, May 14-15</p>
+</section>
+<section id="papers" class="level3">
+<h3 class="anchored" data-anchor-id="papers">Papers</h3>
+<p>2022: With Greg Janée, Rena Curty, Jon Jablonski, Kristi Liu, and Amanda Ho, “Incorporating Data Literacy Topics into Carpentries Lessons”, 2022 CarpentryCon, August 3</p>
+<p>2021: “Landscapes in Motion: Cartographies of Connectivity and the Place of Physical Geography in the Environmental and Spatial Humanities”, 2021 UC GIS Week, November 16-18</p>
+<p>2021: With Dawn Childress, “Linked Open Data in the Sinai Manuscripts Digital Library Project”, 2021 LD4 Conference on Linked Data, July 19-23</p>
+<p>2021: “Welcome to the world of geospatial Linked Open Data”, 2021 UC GIS Meetup, April 1</p>
+<p>2016: “Fuzzy Networks, Fuzzy Geography: Visualizing Complex Networks and Uncertain Data in the Big Ancient Mediterranean”, Linking the Big Ancient Mediterranean Conference, University of Iowa, June 6-8</p>
+<p>2016: with Sarah Bond and Paul Dilley, “BAM: Text, Networks, and GIS Mapping in the Big Ancient Mediterranean”, Mapping the Past: G.I.S. Approaches to Ancient History, University of North Carolina, Chapel Hill, April 8-9</p>
+<p>2015: with Sarah Bond and Paul Dilley, “Developing the Terra Biblica and BAM (“Big Ancient Mediterranean”) Online Resources” in the panel Digital Humanities and the Study of Patristics, Session 1, 17th International Conference on Patristic Studies, Oxford, August 10-14</p>
+<p>2013: “Beyond Maps as Images at the Ancient World Mapping Center”, Linked Ancient World Data Institute, Drew University Campus, May 30-June 1</p>
+<p>2013: “Mapping Antiquity À-la-carte: A GIS Interface of the Ancient World” at Word, Space, Time: Digital Perspectives on the Classical World, Digital Classics Association at SUNY Buffalo, April 5-6</p>
+<p>2012: “Mapping Antiquity À-la-carte” in the panel New Mapping Resources for Instructors and Students, 108th CAMWS Annual Meeting, Baton Rouge, Louisiana, March 28-31</p>
+</section>
+<section id="roundtables-workshops" class="level3">
+<h3 class="anchored" data-anchor-id="roundtables-workshops">Roundtables / Workshops</h3>
+<p>2024 (forthcoming): “A Network of Linked Places: Spatial Network Construction using Pleiades, World History Gazetteer, and GeoJSON”, Linked Pasts 10 / Linked Pasts Japan 1, National Institute of Informatics, Tokyo, Japan, Decembet 9 - 12</p>
+<p>2024: with Loreto Granados García, Paula. “Mary Jaharis Center for Byzantine Art and Culture Data Workshop”, Mary Jaharis Center for Byzantine Art and Culture, Hellenic College Holy Cross, MA, May 13 - 17</p>
+<p>2023: with Seifred, Becky. “Working with Maps: An Introduction to GIS, Spatial Data, and Geospatial Resources for Byzantinists”, Mary Jaharis Center for Byzantine Art and Culture, Hellenic College Holy Cross, MA, May 15 - 18</p>
+<p>2021: with Biswas, Paromita, Dawn Childress, Iman Dagher, and Erica Zhang. “Connecting Knowledge: Linked Open Data in Libraries”, UC Libraries Forum 2021, October 26 - 29</p>
+<p>2020: Levitan, Rebecca et. al.&nbsp;“The Digital Futures of Ancient Objects: Discussing Next Steps for Collaborative Digital Humanities Projects”, 2020 Joint Annual Meeting of the Archaeological Institute of America and the Society for Classical Studies, Washington, DC, January 2–5</p>
+<p>2019: Grossner, Karl, Ryan Horne and Ruth Mostern “Linking Pasts with Place Names and Gazetteers”, ACH 2019 Conference, Pittsburgh, PA, July 23-26</p>
+</section>
+<section id="posters" class="level3">
+<h3 class="anchored" data-anchor-id="posters">Posters</h3>
+<p>2015: “Draft Map of Hispania during the Second Century C.E.”, poster session, 116th Annual Meeting of the Archaeological Institute of America, New Orleans, January 8–11</p>
+</section>
+<section id="organization" class="level3">
+<h3 class="anchored" data-anchor-id="organization">Organization</h3>
+<p>2023: Chair, UC GIS Week, November 13-17</p>
+<p>2019: Panel Organizer for Geospatial Classics: Teaching and Research Applications of G.I.S. Technology. 2019 Joint Annual Meeting of the Archaeological Institute of America and the Society for Classical Studies, San Diego, California, January 3–6</p>
+<p>2010: Planning Committee for Beyond Borders: Ancient Societies and their Intellectual Frontiers, The Ancient Borderlands International Graduate Student Conference, University of California, Santa Barbara</p>
+</section>
+<section id="talks" class="level3">
+<h3 class="anchored" data-anchor-id="talks">Talks</h3>
+<p>2022: “How Not to Lie with Data: Trustworthy Data Storytelling”, UC Love Data Week, University of California, Santa Barbara, February 14</p>
+<p>2021: “A Borderland in Imperial Networks: Aeolis in the Hellenistic World”, Mapping Mobilities Session 3, University of Southern California, January 21</p>
+<p>2019: “Mediterranean Pathways: GIS, Network Analysis, and the Ancient World”, University of California, Santa Barbara, May 20</p>
+<p>2018: with Mostern, Ruth. “Digital Methods in Spatial History workshop”, in 2018 Globalizing World History Research Symposium, University of Pittsburgh, August 24–25</p>
+<p>2014: “New Pathways Through the Ancient World: HGIS, Linked Data, and the Web”, Wake Forrest Digital Humanities Kitchen, Wake Forrest University, October 24</p>
+<p>2014: “Creating a Picture of History: Maps, Data and Method at the Ancient World Mapping Center”, Keynote, UNC / King’s College Transatlantic Conference, UNC Chapel Hill, September 16</p>
+<p>2012: “Mapping Digital Prosopographies”, meeting of The California Consortium for the Study of Late Antiquity, University of California, Davis, October 5</p>
+</section>
+<section id="campus-talks" class="level3">
+<h3 class="anchored" data-anchor-id="campus-talks">Campus Talks</h3>
+<p>2024: “Digital Formats”, Vital Matters / Art, Devotion, Practice, UCLA Fowler Museum, October 16</p>
+<p>2022: “Shifting Cartographies: Geospatial Networks”, 2022 UCLA Global Humanisms Digital Humanities Forum, November 7</p>
+<p>2021: With Dawn Childress, “An Evolving Sinai Manuscripts Data Program”, 2021 UCLA Library Research Forum Program, March 23</p>
+<p>2014: “AWMC Research”, Poster Session, ITS Research Computing Symposium, UNC Chapel Hill, May 20</p>
+<p>2014: with Ross Twele “Mapping the Ancient Mediterranean in the Digital Age”, HGIS Carolina Student Showcase, UNC Chapel Hill, April 3</p>
+<p>2014: “AWMC Research”, Poster Session, University Research Day, UNC Chapel Hill, March 4</p>
+<p>2012: “Antiquity À-la-carte”, Innovative Use of GIS, UNC Chapel Hill, November 14</p>
+</section>
+<section id="campus-workshops" class="level3">
+<h3 class="anchored" data-anchor-id="campus-workshops">Campus Workshops</h3>
+<p>2024: “Markdown, Zotero, and Quarto for Academic Writing and Publishing”, UCLA Office of Advanced Research Computing, October 7</p>
+<p>2024: “Introduction to Network Analysis Methodologies and Tools”, UCLA Office of Advanced Research Computing, April 19</p>
+<p>2023: “Introduction to Data Storytelling”, UCLA Office of Advanced Research Computing, June 27</p>
+<p>2023: “Introduction to Network Analysis Methodologies and Tools”, UCLA Office of Advanced Research Computing, April 14</p>
+<p>2022: “Introduction to QGIS”, UCLA Office of Advanced Research Computing, January 20</p>
+<p>2022: with Curty, Renata and Greg Janée “Using the DMP Tool”, UCSB Office of Research, May 20</p>
+<p>2022: “Introduction to Webscraping”, UCSB Library Carpentry Workshop, May 12-13</p>
+<p>2022: “Data Analysis and Visualization in Python”, UCSB Data Carpentry Workshop, April 19-21</p>
+<p>2022: with Curty, Renata “Data Storytelling for the Social Sciences and Humanities”, UCSB Research Data Services Workshop Series, April 27</p>
+<p>2022: with Curty, Renata “Intro to Digital Humanities and Digital Social Science”, UCSB Research Data Services Workshop Series, April 6</p>
+<p>2021: “Introduction to QGIS and Making a Map in the Humanities”, UCLA Library Research Workshop, January 14</p>
+<p>2020: “Introduction to Mapping and Digital Gazetteers for the Humanities”, UCLA Library Research Workshop, November 17</p>
+<p>2018: “Introduction to Network Analysis and Visualization”, University of Pittsburgh Library, October 12</p>
+<p>2018: “Introduction to QGIS”, University of Pittsburgh Library, September 28</p>
+<p>2017: “Introduction to Network Analysis and Visualization”, University of Pittsburgh Library, October 12</p>
+</section>
+</section>
+<section id="grants-fellowships-and-awards" class="level2">
+<h2 class="anchored" data-anchor-id="grants-fellowships-and-awards">Grants, Fellowships, and Awards</h2>
+<p>2024: Co-author, AI Acceleration Grant, UCLA Office of Advanced Research Computing, $1,500</p>
+<p>2021: Co-author, Mellon Foundation Grant #2101-09956, for the Black Lunch Table Digital Archive (PI: Jina Valentine), $500,000</p>
+<p>2021: Co-author, NEH Digital Humanities Advancement Level III Grant #HAA-280677-21, for Sinai Manuscripts Data Portal Project (PIs: Virginia Steel and Dawn Childress), $325,000</p>
+<p>2020: Co-author, The Andy Warhol Foundation for the Visual Arts, for the Black Lunch Table (PI: Jina Valentine), $60,000</p>
+<p>2019: Digital Atlas Design Internship course selected as one of four University of Pittsburgh entries to the ACC Smithsonian Creativity and Innovation Festival, National Museum of American History, Washington, D.C, April 5-7</p>
+<p>2018: WikiConference North America 2018 Scholarship</p>
+<p>2018: NEH-Mellon Fellowship for Digital Publication #FEL-257341-18, $50,400</p>
+<p>2015: Co-author, Obermann Center for Advanced Studies Interdisciplinary Research Grant, University of Iowa</p>
+<p>2014: Holsenbeck Fund, University of North Carolina, Chapel Hill</p>
+<p>2013: Raymond Faherty Research Grant for Military History, University of North Carolina, Chapel Hill</p>
+<p>2013: George B. Tindall Graduate Fellowship for Summer Research, University of North Carolina, Chapel Hill</p>
+<p>2013: Semple Award, Classical Association of the Middle West and South</p>
+<p>2012: Wadell Fund, University of North Carolina Chapel Hill</p>
+<p>2012: Mowry Dissertation Fellowship, University of North Carolina Chapel Hill</p>
+<p>2011: Clein Fund, University of North Carolina Chapel Hill</p>
+<p>2009: Drake Fund, University of California, Santa Barbara</p>
+</section>
+<section id="teaching-experience" class="level2">
+<h2 class="anchored" data-anchor-id="teaching-experience">Teaching Experience</h2>
+<section id="university-of-california-los-angeles-instructor-of-record" class="level3">
+<h3 class="anchored" data-anchor-id="university-of-california-los-angeles-instructor-of-record">University of California, Los Angeles, Instructor of Record</h3>
+<p>2024: DH 150: Social Justice and GIS, Digital Humanities Program, Fall Quarter<br>
+2024: DH 150: Social Justice and Network Analysis, Digital Humanities Program, Summer Quarter<br>
+2024: DH 101: Introduction to Digital Humanities, Digital Humanities Program, Winter Quarter<br>
+2023: DH 150: Social Justice and GIS, Digital Humanities Program, Spring Quarter<br>
+2023: DH 131: Social Justice and GIS, Digital Humanities Program, Fall Quarter</p>
+</section>
+<section id="university-of-pittsburgh-instructor-of-record" class="level3">
+<h3 class="anchored" data-anchor-id="university-of-pittsburgh-instructor-of-record">University of Pittsburgh, Instructor of Record</h3>
+<p>2019: Digital Atlas Design Internship, History Department, Spring Semester<br>
+2018: Digital Atlas Design Internship, History Department, Fall Semester<br>
+2018: Digital Atlas Design Internship, History Department, Spring Semester<br>
+2017: Digital Atlas Design Internship, History Department, Fall Semester</p>
+</section>
+<section id="university-of-north-carolina-chapel-hill-instructor-of-record" class="level3">
+<h3 class="anchored" data-anchor-id="university-of-north-carolina-chapel-hill-instructor-of-record">University of North Carolina, Chapel Hill, Instructor of Record</h3>
+<p>2017: Introduction To Historical Geographic Information Systems, Honors College, Spring Semester<br>
+2016: Introduction To Social Network Analysis and Conspiracy Theories, Honors College, Fall Semester<br>
+2015: Roman History, History Department, Summer Session II</p>
+</section>
+<section id="university-of-north-carolina-chapel-hill-teaching-assistant" class="level3">
+<h3 class="anchored" data-anchor-id="university-of-north-carolina-chapel-hill-teaching-assistant">University of North Carolina, Chapel Hill, Teaching Assistant</h3>
+<p>2013: History of Greece, History Department, Fall Semester<br>
+2012: Roman History, History Department, Spring Semester<br>
+2011: Ancient History, History Department, Fall Semester</p>
+</section>
+<section id="university-of-california-santa-barbara-teaching-assistant" class="level3">
+<h3 class="anchored" data-anchor-id="university-of-california-santa-barbara-teaching-assistant">University of California, Santa Barbara, Teaching Assistant</h3>
+<p>2010: Western Civilization: 1715 CE to Present, History Department, Spring Quarter<br>
+2009: Introduction to the Middle East, Global and International Studies Program, Fall Quarter<br>
+2009: World History: 7000 BCE-1000 CE, History Department, Spring Quarter<br>
+2008: Introduction to the Middle East, Global and International Studies Program, Fall Quarter</p>
+</section>
+</section>
+<section id="software-competencies" class="level2">
+<h2 class="anchored" data-anchor-id="software-competencies">Software Competencies</h2>
+<p>Javascript (including D3.js, Leaflet, OpenLayers), PHP, C++, C, Java, R, R studio, Python (including anaconda and jupyter notebooks), SQL (including mySQL, PostgreSQL, PostGIS), XML, RDF, Linux, Gephi, Drupal, Wordpress</p>
+</section>
+<section id="professional-service" class="level2">
+<h2 class="anchored" data-anchor-id="professional-service">Professional Service</h2>
+<section id="committee-memberships" class="level3">
+<h3 class="anchored" data-anchor-id="committee-memberships">Committee Memberships</h3>
+<p>2022: Born-Digital and Digital Archives Working Group, UCSB Library</p>
+</section>
+<section id="board-memberships" class="level3">
+<h3 class="anchored" data-anchor-id="board-memberships">Board Memberships</h3>
+<p>2021-present: Development Advisory Board, World Historical Gazetteer</p>
+<p>2018: Advisory Board, Mediterranean Connectivity Initiative</p>
+<p>2018-2022: Vice Chairman of the Board, Black Lunch Table</p>
+</section>
+<section id="peer-review" class="level3">
+<h3 class="anchored" data-anchor-id="peer-review">Peer Review</h3>
+<p>2022: Article Reviewer, International Journal on Digital Libraries</p>
+<p>2022: Panelist, NEH digital humanities advancement grant competition</p>
+<p>2021: Article Reviewer, International Journal of Humanities and Arts Computing</p>
+<p>2018: Panelist, NEH digital humanities advancement grant competition</p>
+<p>2018: Article Reviewer, Journal of Field Archaeology</p>
+<p>2014-2015: Co-Managing Editor, Pleiades Project (NEH Digital Implementation Grant Awarded, July 2015)</p>
+<p>2013-Present: Associate Editor, Pleiades Project</p>
+</section>
+<section id="other" class="level3">
+<h3 class="anchored" data-anchor-id="other">Other</h3>
+<p>2022-Present: Digital Humanities Mentor, Digital Ethics Futures Consortium</p>
+</section>
+</section>
+<section id="professional-development" class="level2">
+<h2 class="anchored" data-anchor-id="professional-development">Professional Development</h2>
+<p>2022: Certified Software Carpentries Instructor</p>
+<p>2022: Certified SCRUM Product Owner</p>
+<p>2020: Selected as a participant in the Linked Open Data – Libraries, Archives, Museums (LODLAM) Summit. The Getty Center, February 3-4.</p>
+<p>2018-2019: Selected as a participant in the Institute in Ancient Itineraries: The Digital Lives of Art History. King’s College, London, England and Swedish Institute at Athens, Athens, Greece.</p>
+<p>2013: Participant in the American School of Classical Studies at Athens Summer Session I, Athens, Greece</p>
+<p>2012: Participant with stipend in the Eric P. Newman Graduate Seminar in Numismatics, American Numismatic Society, New York, New York</p>
+</section>
+<section id="languages" class="level2">
+<h2 class="anchored" data-anchor-id="languages">Languages</h2>
+<p>French: Intermediate reading<br>
+German: Intermediate reading<br>
+Italian: Intermediate reading<br>
+Ancient Greek: Research language<br>
+Latin: Research language</p>
+
+
+</section>
+</section>
+
+<p><br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
