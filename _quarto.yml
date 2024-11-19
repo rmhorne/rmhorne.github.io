@@ -1,0 +1,32 @@
+project:
+  type: website
+
+website:
+  title: "Ryan M Horne"
+  favicon: images/favicon.ico
+  navbar:
+    pinned: true
+    left:
+      - cv.qmd
+      - teaching.qmd
+      - research.qmd
+      - digital-portfolio.md
+      - href: https://github.com/rmhorne
+        icon: github
+      - text: "<img src='https://orcid.org/sites/default/files/images/orcid_16x16.png' style='vertical-align: middle;'> ORCID"
+        href: https://orcid.org/0000-0002-5009-3116
+      - text: "<img src='images/Bluesky_logo.svg' style='height: 16px; vertical-align: middle;'> Bluesky"
+        href: "https://bsky.app/profile/rmhorne.bsky.social"
+      - href: https://twitter.com/RyanMHorne
+        icon: twitter
+  body-footer: <br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+format:
+  html:
+    theme: lux
+    css: styles.css
+    toc: true
+    includes:
+      in-header: header.html
+
+
+

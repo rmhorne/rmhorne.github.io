@@ -1,0 +1,20 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      alert("JavaScript loaded!"); // Test to confirm the script runs
+  
+      // Select all elements with the 'project-title' class
+      const projectTitles = document.querySelectorAll(".project-title");
+  
+      projectTitles.forEach((title, index) => {
+        alert(`Checking title ${index + 1}: ${title.innerText}`); // Alert for each title
+  
+        // Check if the title fits on one line by comparing scroll and offset widths
+        if (title.scrollWidth <= title.offsetWidth) {
+          alert(`Title ${index + 1} is a single line`);
+          // Add a class if the title is a single line
+          title.classList.add("single-line-title");
+        }
+      });
+    });
+  </script>
+  

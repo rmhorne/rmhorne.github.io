@@ -1,0 +1,39 @@
+---
+title: ""
+format: 
+  html:
+    page-layout: full
+---
+
+<br />
+<br />
+
+:::: {.columns style='display: flex !important; height: 90%; align-items: flex-start;'}
+
+::: {.column width="45%"}
+![](images/Horne_Ryan_circle_web.jpg)
+<br/>
+<br />
+ Email (replace the AT with @): ryan.matthew.horne AT gmail.com
+:::
+
+::: {.column width="10%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="45%" }
+## About
+
+This is the personal website of Ryan Horne, PhD. I focus on planning, managing, and preserving interdisciplinary digital humanities research projects. As a Research Consultant in the [GIS and Visualization Group](https://oarc.ucla.edu/get-help/consulting-groups/gis-and-visualization-group) at the [Office of Advanced Research Computing](https://oarc.ucla.edu/) at [UCLA](https://www.ucla.edu/), I collaborate with campus researchers at all levels of their digital scholarship, including conceptualization, implementation, and publication, as well as teach in the [Digital Humanities Program](https://dh.ucla.edu/) and pursue my own research.  
+
+## Research
+
+My research is at the nexus of media studies, digital humanities, and information science. My research focuses on how different social, economic, and political networks are created and maintained by current and historical communities that are on the margins of traditional power structures. An important component of this work is an exploration of how information and misinformation propagate and travel through networks, how these knowledge systems adapt to social and environmental change, and how to model these systems using new digital methods.
+
+## Teaching
+
+My pedagogical approach focuses on promoting student equity and supporting student growth through project-based assignments and digital techniques, with an emphasis on cooperative learning strategies and small group activities. I am committed to the development and support of new curriculum and interdisciplinary research initiatives that address social justice and systemic racism in academia and society, with most of my courses centered on student-led creation of digital projects that highlight social justice issues in digital media, spatial studies, and history.
+
+:::
+
+::::
