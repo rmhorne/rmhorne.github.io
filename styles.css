@@ -14,7 +14,7 @@
   border-radius: 50%; /* Makes the image a circle */
   filter: grayscale(100%);
   transition: filter 0.3s ease;
-  margin-right: 20px; /* Adds space between the image and the text */
+  margin-right: 20px; /* Increased space between the image and the text */
 }
 
 /* Image colorizes on hover */
@@ -25,12 +25,9 @@
 /* Text content container */
 .project-item .text-content {
   display: inline-block; /* Allow the text to wrap around the image */
-  max-width: calc(100% - 100px); /* Ensure text takes the rest of the space */
+  max-width: calc(100% - 120px); /* Ensure text takes the rest of the space */
+  margin-left: 20px; /* Add minimum distance between image text and main text */
+  
 }
 
-/* Bold title styling */
-.project-title {
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
+
